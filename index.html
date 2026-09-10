@@ -204,7 +204,7 @@ footer{
     <h1>Genomic ancestry of a Greek mother and son</h1>
     <p class="standfirst">Findings, and the analysis supporting each of them. Where a question could not be answered, the reason is given rather than a weakly-supported answer.</p>
     <p class="meta">
-      <span>Report 2026-09-09</span>
+      <span>Report 2026-09-10</span>
       <span>2 whole genomes</span>
       <span>1,232,346 genotyped positions</span>
     </p>
@@ -223,7 +223,11 @@ footer{
     <dt>Timing of the steppe component</dt>
     <dd>Enters the Aegean between <b>≈2000 and ≈1900 BCE</b>; this family's proportion matches Mycenaean-era Greeks. <b>High confidence.</b></dd>
     <dt>Position among Greeks</dt>
-    <dd>Inside modern Greek variation, displaced toward West Asia and away from Slavic-speaking populations. <b>Moderate confidence.</b></dd>
+    <dd>Inside modern Greek variation on <b>53 of 54</b> measures, at its <b>eastern Aegean edge</b> &mdash; more haplotype sharing with Anatolia, the Levant, the Caucasus and Crete; less with the Balkans and northern Europe. 33 of 34 populations deviate in the predicted direction (P = 2&times;10<sup>&minus;9</sup>). <b>Moderate confidence.</b></dd>
+    <dt>Timing, this family</dt>
+    <dd>Measured in the same analysis as the ancient remains: steppe <b>0.104 &plusmn; 0.034</b> (son) and <b>0.120 &plusmn; 0.035</b> (mother) &mdash; indistinguishable from Late Bronze Age Crete (0.106) and Greece (0.105). <b>High confidence.</b></dd>
+    <dt>Male bias of the steppe influx</dt>
+    <dd><b>Not determinable.</b> The X-chromosome test is 2.5&times; too coarse to detect even a 100%-male influx. See &sect;7.</dd>
     <dt>Slavic ancestry</dt>
     <dd><b>Not distinguishable from zero</b>; bounded above at roughly 20%. <b>Moderate confidence.</b></dd>
     <dt>Separating the father's contribution</dt>
@@ -325,24 +329,57 @@ footer{
   </table></div>
   <p><strong>All six Neolithic-to-Early-Middle-Bronze-Age populations are indistinguishable from zero. All eight Bronze and Late Bronze Age populations require steppe ancestry.</strong> No population falls on the wrong side of the division, and the two populations either side of it are <strong>both Cretan</strong>, so the pattern tracks time rather than geography.</p>
   <p><strong>This reproduces a published result independently</strong> (Lazaridis et al. 2017; Clemente et al. 2021): Minoan-era Crete lacks the steppe component, mainland Mycenaean-era populations carry roughly 4–16% of it. The expected outcome was recorded before the analysis was run, so the agreement validates the pipeline rather than reflecting a result tuned to match.</p>
-  <p><strong>This family's steppe proportion (0.097–0.158) falls inside the Mycenaean-era range (0.105–0.179)</strong> — consistent with descent from populations already carrying this ancestry in the Bronze Age, rather than from any later introduction.</p>
+  <p><strong>The family was then measured in this same analysis</strong> &mdash; same model, same run, same markers &mdash; rather than compared across analyses:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">Steppe</th><th class="n">SE</th><th class="n">Z</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop"><strong>Son</strong></td><td class="n"><strong>0.104</strong></td><td class="n">0.034</td><td class="n">3.04</td></tr>
+      <tr class="present"><td class="pop"><strong>Mother</strong></td><td class="n"><strong>0.120</strong></td><td class="n">0.035</td><td class="n">3.41</td></tr>
+      <tr><td class="pop">Crete, LBA &mdash; for comparison</td><td class="n">0.106</td><td class="n">0.011</td><td class="n">9.35</td></tr>
+      <tr><td class="pop">Greece general, LBA</td><td class="n">0.105</td><td class="n">0.017</td><td class="n">6.16</td></tr>
+    </tbody>
+  </table></div>
+  <p>Both values are <strong>statistically indistinguishable from Late Bronze Age Crete and from Late Bronze Age Greece generally</strong>. This is the strongest continuity result in the report, and it compares weights <em>within</em> a single model rather than across models &mdash; which is what the analysis was built to support. It is consistent with descent from populations already carrying this ancestry in the Bronze Age, rather than from any later introduction.</p>
   <p class="note">Caveat. The Caucasus hunter-gatherer source rests on 3 individuals, so the formal model p-values are fragile; the conclusion rests on the steppe weight and its standard error, which are well determined.</p>
 
   <h2><span class="num">Section 6</span>Position among modern populations</h2>
   <p>Both individuals fall within the eastern Mediterranean cluster in principal component analysis of 27,594 individuals.</p>
-  <p>A finer-grained haplotype analysis compared the family against 19 Greeks from the Human Origins panel, using a shared set of 39 donor populations. The family falls <strong>inside the Greek range for 37 of 39 donor populations</strong>, but its position within those ranges is systematically directional:</p>
+  <h3>Haplotype sharing: inside the Greek range, at its eastern edge</h3>
+  <p>The finer question &mdash; <em>where</em> within Greek variation &mdash; is answered by haplotype sharing rather than by allele frequencies. The genome is broken into segments and each segment matched to the individual it most resembles among 1,311 people from 44 populations. The resulting copying profile is far more sensitive to fine-scale structure than the methods of &sect;4.</p>
+  <p>Two corrections had to be made before the profiles meant anything. Both are worth stating, because each one uncorrected gives a confidently wrong answer.</p>
+  <p><strong>First, raw copying shares measure panel size, not ancestry.</strong> The largest single donor for this family is Spanish at 16.1% &mdash; and Spanish is also the largest donor for Greeks (16.9%) and for almost everyone else, because 228 of the 1,311 reference individuals are Spanish. Every share must be divided by that population's share of the panel before it can be read.</p>
+  <p><strong>Second, the automatic clustering misplaced the family entirely.</strong> The hierarchical tree put them in a Levantine group with no Greek within nine levels &mdash; contradicting everything else here. The cause is specific: <strong>the son copies 5.2% of his genome from his mother and she copies 5.7% from him.</strong> Each is the other's fifth-largest donor out of 44 populations, because no other person in the panel has a close relative present. That mutual sharing correctly identifies them as a pair and simultaneously makes the pair an outlier against every other group, so the clustering attached them wherever the residual signal fit. Their actual profiles show nothing Levantine:</p>
   <div class="scroll"><table>
-    <thead><tr><th>Donor group</th><th class="n">Mean deviation from the Greek average</th></tr></thead>
+    <thead><tr><th>Recipient</th><th class="n">Greek</th><th class="n">S. Italian</th><th class="n">Turkish</th><th class="n">Levantine</th></tr></thead>
     <tbody>
-      <tr><td class="pop">West Asia / Caucasus (16 populations)</td><td class="n">+1.49</td></tr>
-      <tr><td class="pop">Europe, other (12 populations, no prediction)</td><td class="n">−0.34</td></tr>
-      <tr><td class="pop">NE Europe / Slavic / Baltic (11 populations)</td><td class="n">−1.37</td></tr>
+      <tr class="present"><td class="pop"><strong>Son</strong></td><td class="n">1.6%</td><td class="n">1.7%</td><td class="n">3.8%</td><td class="n">14.3%</td></tr>
+      <tr class="present"><td class="pop"><strong>Mother</strong></td><td class="n">1.6%</td><td class="n">1.8%</td><td class="n">4.1%</td><td class="n">13.6%</td></tr>
+      <tr><td class="pop">Greek mean (n=19)</td><td class="n">2.1%</td><td class="n">1.8%</td><td class="n">4.0%</td><td class="n">13.5%</td></tr>
+      <tr><td class="pop">Turkish mean (n=48)</td><td class="n">1.6%</td><td class="n">1.8%</td><td class="n">4.9%</td><td class="n">14.7%</td></tr>
+      <tr class="absent"><td class="pop">Druze mean (n=83) &mdash; genuinely Levantine</td><td class="n">0.9%</td><td class="n">1.1%</td><td class="n">2.4%</td><td class="n">48.8%</td></tr>
     </tbody>
   </table></div>
-  <p><strong>The separation is complete: every one of the 16 West Asian donor populations ranks above every one of the 11 northeastern European ones</strong> (0 of 176 pairwise comparisons discordant), with the unpredicted European group falling exactly between them.</p>
-  <p>So this family sits within Greek variation but shifted toward West Asia and away from Slavic-speaking populations. Two caveats limit how far this can be pushed: the comparison is one family against a population sample, and it is a comparison to 19 specific individuals rather than to Greeks in general.</p>
-  <p><strong>Slavic ancestry is not distinguishable from zero</strong> in formal modelling, with an upper bound of roughly 20%. Where a model includes an Aegean source population, the fitted Slavic contribution collapses to 5–10% with standard errors spanning zero; where no Aegean source is available, a Slavic proxy absorbs unrelated variance and the apparent contribution rises. The haplotype analysis above points the same way from an independent direction.</p>
-  <p class="note">A related analysis, fine-scale haplotype clustering, was still computing at the time of writing and may refine this section.</p>
+  <p>About 14% Levantine sharing is the ordinary eastern Mediterranean baseline &mdash; Greeks, Turks and southern Italians all show it. A genuinely Levantine group shows 48.8%.</p>
+  <p>With panel size divided out and the family's mutual sharing excluded, each individual can be placed against the spread of the 19 individual Greeks. Donor populations were split on geography alone, before the numbers were examined:</p>
+  <div class="scroll"><table>
+    <thead><tr><th></th><th class="n">East<sup>1</sup></th><th class="n">Northwest<sup>2</sup></th><th class="n">As predicted</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop"><strong>Son</strong></td><td class="n">16 of 17 above</td><td class="n"><strong>17 of 17 below</strong></td><td class="n">33 of 34</td></tr>
+      <tr class="present"><td class="pop"><strong>Mother</strong></td><td class="n">16 of 17 above</td><td class="n"><strong>17 of 17 below</strong></td><td class="n">33 of 34</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><sup>1</sup> Anatolia, Levant, Caucasus, Cyprus, Crete (17 populations). <sup>2</sup> Balkans, central, northern and eastern Europe (17 populations). Above and below are relative to the Greek average.</p>
+  <p>The probability of 33 of 34 populations deviating in the predicted direction by chance is <strong>2&times;10<sup>&minus;9</sup></strong>; a rank test of East against Northwest gives P = 2.5&times;10<sup>&minus;6</sup>.</p>
+  <p><strong>The finding.</strong> This family is Greek &mdash; 53 of 54 measurements fall inside the range of the 19 individual Greeks, and the copying profile is a Greek profile. Within that range they sit consistently at the <strong>eastern Aegean end</strong>: modestly more sharing with Anatolia, the Levant, the Caucasus and Crete, less with the Balkans and northern Europe. The shifts are small &mdash; roughly 10&ndash;25% in relative terms &mdash; and no single one is individually remarkable. The result is the <em>consistency of direction</em> across 34 populations, not the size of any one deviation.</p>
+  <p>Three limits on how far this can be pushed. <strong>Mother and son are not independent observations</strong> &mdash; a son's maternal chromosomes are his mother's, so the two identical probabilities above are one family measured twice. <strong>The comparison is to 19 specific Greek individuals</strong>, not to Greeks in general. And <strong>this family's data were produced by a different technology</strong> from the reference panel's &mdash; sequencing rather than genotyping arrays &mdash; a difference known to distort exactly this kind of comparison; see &sect;7.</p>
+  <p>Regional origin within Greece is a plausible reading of an eastern tilt, but these data cannot separate it from other histories producing the same pattern, and no family history was used in the analysis.</p>
+
+  <h3>Slavic ancestry</h3>
+  <p><strong>Not distinguishable from zero</strong> in formal modelling, with an upper bound of roughly 20%. Where a model includes an Aegean source population the fitted Slavic contribution collapses to 5&ndash;10% with standard errors spanning zero; where no Aegean source is available, a Slavic proxy absorbs unrelated variance and the apparent contribution rises. The haplotype analysis above points the same way from an independent direction &mdash; northwestern European and Balkan sharing is consistently <em>below</em> the Greek average, not above it.</p>
+
+  <h3>A comparison this report does not make</h3>
+  <p>An earlier draft placed the family against 42 modern populations using the method of &sect;4, and reported them displaced toward West Asia relative to Greeks. <strong>That comparison has been withdrawn.</strong> The model fits none of the 42 populations, and a second version of it &mdash; adding the ancestral source that the failures identified as missing &mdash; reverses the direction of the result while also failing. Two models that disagree about the <em>sign</em> of an effect, both rejected by the data, cannot support a claim in either direction. The finding above rests on haplotype sharing instead, which is a different kind of evidence and does not depend on a fitted model.</p>
+  <p>The gradient across those 42 populations remains a valid <em>description</em> of how these ancestry components vary geographically; it is the family's specific position within it that the method could not establish.</p>
 
   <h2><span class="num">Section 7</span>What these data cannot determine</h2>
   <p>Reporting these clearly is part of the result.</p>
@@ -362,7 +399,30 @@ footer{
     </table></div>
     <p><strong>The comparison that should be zero is consistently larger than the comparison that contains the father</strong>, and all 28 reference populations deviate in the same direction — a pattern ancestry cannot produce, since it would require the same bias relative to Sardinians, Saudis, Lithuanians and Chechens alike.</p>
     <p>Every available remedy was tested. Re-aligning the reads removed only ~4% of the effect. Filtering to well-behaved sequence contexts did not remove it. <strong>Re-calling both genomes with an independent variant caller did not remove it</strong> — even though that caller eliminated ~91% of the underlying allelic imbalance, confirming the problem is the sequencing chemistry itself and not the software applied to it.</p>
-    <p><strong>The only route to this question is a new sample</strong> — ideally the father's sister, sequenced on the same platform as the mother, allowing direct observation of the paternal side rather than reconstruction by subtraction.</p>
+    <p><strong>The only route to this question is a new sample</strong> &mdash; ideally the father's sister, sequenced on the same platform as the mother, allowing direct observation of the paternal side rather than reconstruction by subtraction.</p>
+    <p><strong>Why the haplotype result in &sect;6 is nonetheless reported.</strong> The same platform difference applies there, and more sharply, because haplotype matching is sensitive to sequencing and to which positions were measured. Two things argue the eastern tilt is not an artefact of it. The measure used divides out each population's share of the reference panel, which is the obvious channel through which a technical difference would act &mdash; it would make the family appear to copy more from whichever panels are largest or best measured, and that effect is removed by construction. And a technical artefact has no reason to organise itself geographically: it would flatten the profile or tilt it toward large panels, not place 17 of 17 eastern Mediterranean populations above the Greek average and 17 of 17 northern European ones below it. The result is reported at moderate confidence for that reason, not high, and it is the one conclusion here we would most want independently checked.</p>
+  </div>
+
+  <div class="limit">
+    <h3>Whether the steppe influx was male-biased cannot be determined</h3>
+    <p>Whole communities moving, and men arriving to father children with local women, leave the same autosomal signature but different X-chromosome signatures. Women carry two X chromosomes and men one, so two thirds of the X copies in a population descend from female ancestors against one half of autosomal copies; an ancestry component contributed mainly by men is therefore under-represented on the X. Steppe expansion into central and northern Europe is reported as strongly male-biased, so the same was expected here.</p>
+    <p>The test was run &mdash; the same model fitted twice, once to the autosomes and once to the X, with the pre-steppe Cretan population as a control that had to come back flat. <strong>The control passed cleanly (Z = 0.12). The result is that the test has no power to answer the question.</strong></p>
+    <div class="scroll"><table>
+      <thead><tr><th>Target</th><th class="n">Autosome</th><th class="n">X</th><th class="n">X &minus; auto</th><th class="n">Z</th></tr></thead>
+      <tbody>
+        <tr><td class="pop">Crete, Hagios Charalambos &mdash; <em>control</em></td><td class="n">0.016 &plusmn; 0.012</td><td class="n">0.023 &plusmn; 0.054</td><td class="n">+0.007</td><td class="n">0.12</td></tr>
+        <tr><td class="pop">Crete, LBA</td><td class="n">0.106 &plusmn; 0.011</td><td class="n">0.011 &plusmn; 0.078</td><td class="n">&minus;0.095</td><td class="n">&minus;1.21</td></tr>
+        <tr><td class="pop">Peloponnese, LBA</td><td class="n">0.170 &plusmn; 0.022</td><td class="n">0.223 &plusmn; 0.085</td><td class="n">+0.053</td><td class="n">0.60</td></tr>
+        <tr><td class="pop">Greece general, LBA</td><td class="n">0.105 &plusmn; 0.017</td><td class="n">0.275 &plusmn; 0.085</td><td class="n">+0.170</td><td class="n">1.97</td></tr>
+        <tr><td class="pop">Achaea, LBA</td><td class="n">0.275 &plusmn; 0.018</td><td class="n">&minus;0.110 &plusmn; 0.314</td><td class="n">&minus;0.385</td><td class="n">&minus;1.22</td></tr>
+        <tr><td class="pop">Kastrouli, BA</td><td class="n">0.179 &plusmn; 0.023</td><td class="n">0.272 &plusmn; 0.140</td><td class="n">+0.093</td><td class="n">0.65</td></tr>
+        <tr><td class="pop">Palace of Nestor, BA</td><td class="n">0.159 &plusmn; 0.018</td><td class="n">0.078 &plusmn; 0.064</td><td class="n">&minus;0.081</td><td class="n">&minus;1.21</td></tr>
+        <tr><td class="pop">Son</td><td class="n">0.104 &plusmn; 0.034</td><td class="n">0.118 &plusmn; 0.158</td><td class="n">+0.015</td><td class="n">0.09</td></tr>
+        <tr><td class="pop">Mother</td><td class="n">0.120 &plusmn; 0.035</td><td class="n">0.248 &plusmn; 0.168</td><td class="n">+0.128</td><td class="n">0.75</td></tr>
+      </tbody>
+    </table></div>
+    <p>The X chromosome carries 49,581 of the analysed positions against roughly 1.18 million on the autosomes, and after requiring every population to be genotyped the X analysis rests on 15,545 usable positions against 677,066. Standard errors are 5.6 times larger. The smallest difference such a test could detect is <strong>0.230</strong>. Under a <em>completely</em> male-mediated influx &mdash; every steppe ancestor a man &mdash; the expected difference for these populations would be between 0.035 and <strong>0.092</strong>.</p>
+    <p><strong>The detection threshold is 2.5 times larger than the largest effect a 100%-male influx could produce.</strong> No target reached significance, and only three of eight even pointed in the predicted direction, but neither fact carries information: an instrument that cannot see a maximal effect tells you nothing when it sees nothing. This is reported as an unanswered question, not as evidence of no sex bias. Answering it would need whole-genome sequence data from the ancient individuals rather than the targeted panel available.</p>
   </div>
 
   <div class="limit">
@@ -401,10 +461,11 @@ footer{
 
   <h2><span class="num">Section 9</span>Interpretation</h2>
   <p>The genetic evidence describes a family whose ancestry is characteristic of the Aegean since the Bronze Age: predominantly descended from the Neolithic farming populations of Anatolia who settled Greece from roughly 6500 BCE, with a substantial Caucasus/Iranian-related component, and a minority steppe-related component that entered the region around 2000–1900 BCE — the period associated with the emergence of Mycenaean Greece.</p>
-  <p>The proportions place this family within the range measured in Mycenaean-era remains, rather than requiring any later population movement. Consistently, no detectable Slavic contribution was found, and the fine-scale haplotype evidence places the family toward the West Asian end of Greek variation.</p>
+  <p>Measured in the same analysis as the ancient remains themselves, the family's steppe proportion is indistinguishable from Late Bronze Age Crete and Late Bronze Age Greece &mdash; placing them within the range of Mycenaean-era populations rather than requiring any later population movement. Consistently, no detectable Slavic contribution was found, and the fine-scale haplotype evidence places the family at the eastern Aegean end of Greek variation.</p>
+  <p>Two questions asked of these data could not be answered by them, and are reported as such rather than resolved: the father's individual contribution, blocked by a sequencing-platform artefact that survived every remedy tested, and whether the steppe influx was male-biased, for which the available X-chromosome data are too sparse by a factor of 2.5 to detect even a maximal effect.</p>
   <p>The paternal line is a distinct thread within that picture: it descends from Bronze Age steppe populations, reached the southern Balkans by the Middle Bronze Age, and has since accumulated 32 variants found in no other tested genome, ancient or modern.</p>
 
-  <p class="figures">All analyses run on a university high-performance computing cluster. Version and parameter records retained.</p>
+  <p class="figures">All analyses run on Northwestern University's Quest cluster. Version and parameter records retained.</p>
 </article>
 
 <!-- ============================= PLAIN ============================= -->
@@ -431,7 +492,8 @@ footer{
   <p>The steppe component is the smallest slice, and the most historically loaded one, because its arrival in Greece coincides with the emergence of Mycenaean civilisation — the world of Agamemnon, Linear B tablets and shaft graves.</p>
   <p>The date here does not come from any clock inside your DNA. It comes from skeletons. Every ancient Greek and Aegean population with usable DNA and a radiocarbon date was tested with the same method used on your genomes, and asked a simple question: does this population need steppe ancestry to explain it, or not?</p>
   <p>The answer splits cleanly in time. Every population from the Neolithic through the early Middle Bronze Age — six of them, spanning roughly 6200 to 2000 BCE — shows no steppe ancestry at all. Every population from about 2000 BCE onward — eight of them, including the people buried at the Palace of Nestor and across Crete, Attica and the Peloponnese — requires it. Not one population sits on the wrong side of that line. And helpfully, the two populations either side of the boundary are both Cretan, so the pattern is tracking time rather than geography.</p>
-  <p>Your family's steppe proportion falls inside the range measured in Mycenaean-era remains. That is consistent with descent from populations that already carried this ancestry in the Bronze Age, rather than from any later arrival into Greece. It is a consistency, not a pedigree — but it is a real one.</p>
+  <p>Your family was then measured <em>inside that same analysis</em> &mdash; the same model, the same genetic markers, the same computer run &mdash; rather than measured separately and compared afterwards. That matters, because it removes the possibility that a difference in method is doing the work. Your steppe proportion came out at <strong>0.104</strong> for the son and <strong>0.120</strong> for the mother, with an uncertainty of about 0.035 either way. Late Bronze Age Crete is <strong>0.106</strong>; Late Bronze Age Greece generally is <strong>0.105</strong>.</p>
+  <p>Those numbers are statistically indistinguishable. You carry the same proportion of steppe ancestry as the Mycenaean-era dead, measured on the same ruler. This is the strongest continuity result in the whole report. It is a consistency rather than a pedigree &mdash; it does not name an ancestor &mdash; but it is a real one.</p>
   <p>This part of the analysis also served as a test of the whole pipeline. The expected answer, from published research on Minoan and Mycenaean remains, was written down <em>before</em> the analysis was run. It came out matching. That is reassurance that the machinery works, not a result bent to fit.</p>
 
   <h2>The father's line: from the steppe, through the Balkans</h2>
@@ -450,10 +512,21 @@ footer{
   <p><strong>The maternal line cannot be dated.</strong> Dating a lineage depends on counting up mutations unique to it, and this mitochondrial genome carries none outside the handful of positions that mutate so often they are useless for the purpose. There is simply no clock to read here. This is a genuine blank, not a number awaiting refinement.</p>
 
   <h2>Where you sit among modern Greeks</h2>
-  <p>Both individuals fall comfortably within the eastern Mediterranean cluster when compared against tens of thousands of people worldwide, and within the range of Greek variation specifically.</p>
-  <p>Within that range, though, the position is consistently directional: shifted toward West Asia and the Caucasus, and away from northeastern European and Slavic-speaking populations. The pattern is strikingly clean — of the donor populations used in the comparison, every single West Asian one ranks above every single northeastern European one, with the rest of Europe falling neatly in between. Relatedly, formal modelling finds <strong>no detectable Slavic ancestry</strong>: the estimate cannot be distinguished from zero, with an upper limit of around 20%.</p>
-  <p>Treat this section as suggestive rather than settled. It compares one family against 19 specific Greek individuals, not against Greeks in general, and one further analysis was still running when the report was written.</p>
+  <p>Both of you fall comfortably within the eastern Mediterranean cluster when compared against tens of thousands of people worldwide, and within the range of Greek variation specifically. The finer question is <em>where</em> inside that range &mdash; and answering it needed a different, more sensitive method than the one behind the percentages above.</p>
+  <p>That method works on long stretches rather than single positions. Your genome is cut into segments, and each segment is matched to whichever of 1,311 reference people from 44 populations it most closely resembles. The tally of who you resemble, and where, is a much finer instrument than an overall ancestry percentage.</p>
+  <p><strong>The answer: you are Greek, and you sit at the eastern edge of Greek.</strong> Of 54 separate measurements, 53 fall inside the range of the 19 individual Greeks you were compared against &mdash; your profile is a Greek profile. Within that range, the position is consistently directional: modestly more sharing with Anatolia, the Levant, the Caucasus and Crete, and modestly less with the Balkans and northern Europe. Of 34 populations tested, 33 lean that same way. The odds of that happening by chance are about two in a billion.</p>
+  <p>Two things keep this at "likely" rather than "settled". The shifts are small &mdash; roughly 10 to 25% more or less sharing than the Greek average, not dramatic differences. And you and your mother are not two independent pieces of evidence: half of a son's DNA <em>is</em> his mother's, so this is one family measured twice, not two families agreeing. It is also a comparison against 19 specific Greek people rather than against Greeks in general.</p>
+  <p>Relatedly, formal modelling finds <strong>no detectable Slavic ancestry</strong> &mdash; the estimate cannot be distinguished from zero, with an upper limit around 20%. The haplotype work points the same way from a different direction: your sharing with Balkan and northeastern European populations is consistently <em>below</em> the Greek average, not above it.</p>
 
+  <h3>Two ways this analysis first went wrong</h3>
+  <p>Both are worth telling, because each one, left uncorrected, produced a confident and completely wrong answer.</p>
+  <p><strong>The automatic grouping step put your family in the Levant.</strong> The software that sorts everyone into related clusters placed you in a group of Druze, Palestinians and Iranians, with no Greek anywhere near you. Taken at face value it contradicted everything else in this report.</p>
+  <p>The cause turned out to be endearing. <strong>The son copies 5.2% of his genome from his mother, and she copies 5.7% from him.</strong> Each of you is the other's fifth-largest "donor" out of 44 populations &mdash; because you are the only close relatives anywhere in a reference panel of 1,311 people. That mutual resemblance is entirely correct; it is the algorithm noticing you are mother and son. But it also makes the two of you, as a pair, look unlike every other group in the panel, so the sorting step parked you wherever the leftover signal happened to fit. Your actual profiles are unremarkable: about 14% of your genome matches Levantine people, which is simply the normal eastern Mediterranean background &mdash; Greeks show 13.5%, Turks 14.7%, southern Italians 14.3%. An actually Levantine group, the Druze, shows 48.8%.</p>
+  <p><strong>The raw numbers said your biggest genetic affinity was Spanish.</strong> At 16.1%, Spanish was your largest single match. It is also the largest single match for Greeks (16.9%) and for almost everybody else &mdash; because 228 of the 1,311 reference people are Spanish. You resemble Spaniards most simply because there are more Spaniards to resemble. Every figure had to be divided by how many people each population contributed before it meant anything at all.</p>
+
+  <h3>A comparison the report no longer makes</h3>
+  <p>An earlier version of this report said your family was shifted toward West Asia compared with Greeks, based on the percentage-style method rather than the segment-matching one. <strong>That claim has been withdrawn.</strong></p>
+  <p>The reason is worth understanding, because it is the kind of thing that separates a result from a number. That model turned out not to fit <em>any</em> of the 42 modern populations it was tested on &mdash; including Greeks &mdash; which meant it was the wrong description of how those populations formed. A corrected version, adding an ancestral population the failures showed was missing, fit no better <em>and reversed the direction of the answer</em>. Two versions of a model that disagree about which way an effect points, both rejected by the data, cannot support a conclusion either way. So the claim was dropped rather than kept with a caveat, and the eastern-edge finding above rests on the segment-matching evidence instead &mdash; a different kind of evidence, better suited to placing one family inside one country's variation, and not dependent on a model fitting.</p>
   <h2>What could not be answered</h2>
   <p>This is as much a part of the result as the findings, and it should not be dressed up.</p>
 
@@ -466,15 +539,24 @@ footer{
     <p><strong>What would answer it: the father's sister.</strong> Sequencing the aunt would allow the paternal side to be observed directly rather than reconstructed by subtraction. Crucially, her sample would need to be sequenced on <strong>the same platform as the mother's</strong> — otherwise the identical problem reappears in a new form. That is the one clear route forward from here.</p>
   </div>
 
+  <div class="limit">
+    <h3>Whether the steppe arrivals were mostly men could not be determined</h3>
+    <p>And here, "we found nothing" genuinely means nothing. This is the clearest example in the report of why that distinction matters.</p>
+    <p>Whole families migrating into Greece, and mostly men arriving and having children with local women, leave the same trace in the bulk of the genome. They differ on the X chromosome: women carry two X chromosomes and men one, so the X records a different mix of male and female ancestors than the rest of the genome does. An ancestry brought in mainly by men shows up thinner there. Elsewhere in Europe the steppe expansion is reported as strongly male-dominated, so the same was expected here.</p>
+    <p>The test was run properly, including a check on a pre-steppe Cretan population that had to come back flat, and did. The finding is that <strong>the test cannot see an answer either way.</strong> The X chromosome holds only 49,581 of the DNA positions measured here, against about 1.18 million on the rest of the genome &mdash; and once every population has to be reliably measured at a position, just 15,545 remain usable.</p>
+    <p>The consequence is arithmetic. The smallest difference such a test could detect is 0.230. Yet even if <em>every single</em> steppe ancestor had been a man, the difference produced would be only 0.035 to 0.092. <strong>The ruler is 2.5 times too coarse to measure even the largest effect the question could possibly produce.</strong></p>
+    <p>So nothing came out significant, and that tells us nothing at all. It is not evidence that families migrated rather than men. "We looked and there is nothing there" and "our instrument is not fine enough to see this" are entirely different statements, and this is firmly the second. Settling it would need far richer DNA from the ancient skeletons than exists today.</p>
+  </div>
+
   <p><strong>The mixing itself cannot be dated from your genomes.</strong> There are methods that date ancient mixing events by measuring how thoroughly the different ancestries have been shuffled along the chromosomes, but they reach back only about 60 generations. The event of interest is around 130 generations ago — twice as far as the method can see. Three attempts produced nothing usable. The date of 2000–1900 BCE comes from radiocarbon-dated skeletons instead, which is the better route anyway.</p>
   <p><strong>The route question is answered for the paternal line only.</strong> As noted above, the overall genome cannot distinguish a steppe route from a Caucasus one. Only the Y chromosome settles it, and it settles it for that one thread.</p>
 
   <h2>In short</h2>
-  <p>Your ancestry is characteristic of the Aegean since the Bronze Age: mostly descended from the Neolithic farmers who brought agriculture from Anatolia into Greece around 6500 BCE, with a substantial Caucasus/Iranian-related layer, and a minority steppe component that arrived around 2000–1900 BCE, at the dawn of Mycenaean Greece — in proportions matching the Mycenaean-era dead themselves. No Slavic ancestry is detectable. The maternal line runs back into the eastern Mediterranean of Classical antiquity, undatable with present data. And the paternal line is a thread of its own: down from the Bronze Age steppe, through the Balkans, into Greece — carrying 32 mutations that, so far as anyone can currently tell, belong to no one else alive or dead.</p>
+  <p>Your ancestry is characteristic of the Aegean since the Bronze Age: mostly descended from the Neolithic farmers who brought agriculture from Anatolia into Greece around 6500 BCE, with a substantial Caucasus/Iranian-related layer, and a minority steppe component that arrived around 2000–1900 BCE, at the dawn of Mycenaean Greece — in proportions statistically indistinguishable from the Mycenaean-era dead themselves, measured inside the same analysis rather than compared across two. Within Greek variation you sit at its eastern Aegean edge. No Slavic ancestry is detectable. The maternal line runs back into the eastern Mediterranean of Classical antiquity, undatable with present data. And the paternal line is a thread of its own: down from the Bronze Age steppe, through the Balkans, into Greece — carrying 32 mutations that, so far as anyone can currently tell, belong to no one else alive or dead.</p>
 </article>
 
 <footer>
-  Contains identifiable genetic information for two living people. Please treat accordingly.
+  Contains identifiable genetic information for two living people. Please treat accordingly and do not redistribute.
 </footer>
 
 </main>
