@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Reachable by link, deliberately not searchable. The paternal haplogroup
+     named in this page is a private branch, so a search result for it would be
+     a route from the clade back to this family. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta name="description" content="Genomic ancestry findings for a Greek mother and son: a full technical report and a plain-language companion.">
+<meta name="color-scheme" content="light dark">
+
+<title>Two Aegean Genomes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --ground:#F3F4F1;
+  --surface:#FFFFFF;
+  --ink:#1B2320;
+  --muted:#5C665F;
+  --faint:#DFE2DC;
+  --oxide:#8C3A2B;
+  --aegean:#2E5A6B;
+  --band:#EDEFEA;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#121614; --surface:#1A201D; --ink:#E8EAE5; --muted:#96A29A;
+    --faint:#2C3531; --oxide:#D2705C; --aegean:#7FB2C6; --band:#1E2522;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121614; --surface:#1A201D; --ink:#E8EAE5; --muted:#96A29A;
+  --faint:#2C3531; --oxide:#D2705C; --aegean:#7FB2C6; --band:#1E2522;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  margin:0; -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- header ---------- */
+.masthead{
+  border-bottom:1px solid var(--faint); background:var(--surface);
+  position:sticky; top:0; z-index:10;
+}
+.masthead-in{
+  max-width:60rem; margin:0 auto; padding:.85rem 1.5rem;
+  display:flex; align-items:baseline; gap:1.25rem; flex-wrap:wrap;
+}
+.wordmark{
+  font-family:var(--serif); font-size:1.06rem; font-weight:600;
+  letter-spacing:.01em; margin:0;
+}
+.wordmark span{color:var(--oxide)}
+.switch{display:flex; gap:.4rem; margin-left:auto}
+.switch button{
+  font-family:var(--sans); font-size:.75rem; font-weight:500;
+  letter-spacing:.07em; text-transform:uppercase;
+  padding:.45rem .85rem; border-radius:2px; cursor:pointer;
+  background:transparent; color:var(--muted);
+  border:1px solid var(--faint);
+}
+.switch button[aria-selected="true"]{
+  background:var(--aegean); border-color:var(--aegean); color:var(--surface);
+}
+.switch button:focus-visible{outline:2px solid var(--oxide); outline-offset:2px}
+
+/* ---------- shell ---------- */
+main{max-width:60rem; margin:0 auto; padding:0 1.5rem 6rem}
+.doc{max-width:38rem}
+.doc.wide{max-width:none}
+
+.title-block{padding:3.25rem 0 2rem; border-bottom:1px solid var(--faint); margin-bottom:2.5rem}
+h1{
+  font-family:var(--serif); font-weight:600; font-size:2.4rem; line-height:1.15;
+  margin:0 0 .6rem; text-wrap:balance; letter-spacing:-.01em;
+}
+.standfirst{font-size:1.06rem; color:var(--muted); margin:0; max-width:34rem; text-wrap:balance}
+.meta{
+  font-family:var(--mono); font-size:.76rem; color:var(--muted);
+  letter-spacing:.02em; margin:1.4rem 0 0;
+  display:flex; gap:1.5rem; flex-wrap:wrap;
+}
+
+h2{
+  font-family:var(--serif); font-weight:600; font-size:1.45rem; line-height:1.25;
+  margin:3.2rem 0 .9rem; text-wrap:balance; letter-spacing:-.005em;
+}
+h2 .num{
+  font-family:var(--mono); font-size:.7rem; font-weight:500; color:var(--oxide);
+  letter-spacing:.1em; display:block; margin-bottom:.5rem;
+}
+h3{font-family:var(--sans); font-weight:600; font-size:1rem; margin:2rem 0 .5rem}
+p{margin:0 0 1.05rem; max-width:38rem}
+strong{font-weight:600}
+em{font-style:italic}
+code{font-family:var(--mono); font-size:.88em; color:var(--oxide)}
+a{color:var(--aegean)}
+
+.lede{font-size:1.08rem}
+.note{
+  font-size:.92rem; color:var(--muted); font-style:italic;
+  border-left:2px solid var(--faint); padding-left:1rem; margin:1.4rem 0;
+  max-width:36rem;
+}
+
+/* ---------- tables ---------- */
+.scroll{overflow-x:auto; margin:1.5rem 0; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; font-size:.88rem; width:100%; min-width:32rem}
+.wide table{min-width:44rem}
+th{
+  font-family:var(--sans); font-weight:600; font-size:.7rem;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:.5rem .8rem .5rem 0; border-bottom:1px solid var(--ink);
+  white-space:nowrap;
+}
+td{padding:.55rem .8rem .55rem 0; border-bottom:1px solid var(--faint); vertical-align:baseline}
+td.n, th.n{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; padding-right:1.2rem}
+th.n{text-align:right}
+tr:last-child td{border-bottom:none}
+.pop{font-weight:500}
+.era{font-family:var(--mono); font-size:.78rem; color:var(--muted); white-space:nowrap}
+
+/* the 2000 BCE boundary: a real event in the data, not decoration */
+tr.boundary td{border-top:2px solid var(--oxide)}
+.boundary-note{
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--oxide); padding-top:.9rem !important;
+}
+tr.absent td.n{color:var(--muted)}
+tr.present td.n:first-of-type{color:var(--oxide); font-weight:500}
+
+/* ---------- summary ---------- */
+.summary{margin:0 0 1rem}
+.summary dt{
+  font-family:var(--sans); font-weight:600; font-size:.98rem;
+  margin-top:1.15rem; padding-top:1.15rem; border-top:1px solid var(--faint);
+}
+.summary dt:first-child{border-top:none; margin-top:0; padding-top:0}
+.summary dd{margin:.25rem 0 0; color:var(--muted); font-size:.95rem; max-width:36rem}
+.summary dd b{color:var(--ink); font-weight:600}
+
+/* ---------- limits ---------- */
+.limit{
+  background:var(--band); border-radius:3px;
+  padding:1.35rem 1.5rem; margin:1.5rem 0; max-width:38rem;
+}
+.limit h3{margin-top:0}
+.limit p:last-child{margin-bottom:0}
+
+.figures{
+  font-family:var(--mono); font-size:.82rem; color:var(--muted);
+  border-top:1px solid var(--faint); padding-top:1rem; margin-top:2.5rem;
+}
+footer{
+  margin-top:5rem; padding-top:1.5rem; border-top:1px solid var(--faint);
+  font-size:.82rem; color:var(--muted); max-width:38rem;
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  h1{font-size:1.9rem}
+  .masthead-in{padding:.7rem 1.1rem}
+  main{padding:0 1.1rem 4rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+</style>
+
+<style>
+  /* Reset equivalents the artifact host would otherwise provide. */
+  html{color-scheme:light dark}
+  img{max-width:100%}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-in">
+    <p class="wordmark">Two Aegean Genomes<span>.</span></p>
+    <div class="switch" role="tablist" aria-label="Choose a version">
+      <button role="tab" id="tab-full" aria-selected="true" aria-controls="doc-full">Full report</button>
+      <button role="tab" id="tab-plain" aria-selected="false" aria-controls="doc-plain">Plain language</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================= FULL ============================= -->
+<article class="doc wide" id="doc-full" role="tabpanel" aria-labelledby="tab-full">
+
+  <div class="title-block">
+    <h1>Genomic ancestry of a Greek mother and son</h1>
+    <p class="standfirst">Findings, and the analysis supporting each of them. Where a question could not be answered, the reason is given rather than a weakly-supported answer.</p>
+    <p class="meta">
+      <span>Report 2026-09-09</span>
+      <span>2 whole genomes</span>
+      <span>1,232,346 genotyped positions</span>
+    </p>
+  </div>
+
+  <h2><span class="num">Summary</span>What the data support</h2>
+  <dl class="summary">
+    <dt>Paternal lineage</dt>
+    <dd>Y haplogroup <b>R-FGC4547</b>, within R1a-Z93. A private branch carrying 32 variants found in no ancient genome tested. <b>High confidence.</b></dd>
+    <dt>Paternal origin</dt>
+    <dd>Steppe-derived, and <b>did not arrive via Anatolia or the Caucasus</b> — the lineage is absent from 554 Bronze-Age-or-earlier men of that region, and present in 3.2% of steppe men. <b>High confidence.</b></dd>
+    <dt>Maternal lineage</dt>
+    <dd>mtDNA <b>K1a19</b>, identical in mother and son at all 16,569 positions. <b>High confidence.</b></dd>
+    <dt>Autosomal ancestry</dt>
+    <dd>Approximately <b>55% Anatolian-Neolithic-related, 30% Caucasus/Iranian-related, 12% steppe-related</b>. Three independent methods agree. <b>High confidence.</b></dd>
+    <dt>Timing of the steppe component</dt>
+    <dd>Enters the Aegean between <b>≈2000 and ≈1900 BCE</b>; this family's proportion matches Mycenaean-era Greeks. <b>High confidence.</b></dd>
+    <dt>Position among Greeks</dt>
+    <dd>Inside modern Greek variation, displaced toward West Asia and away from Slavic-speaking populations. <b>Moderate confidence.</b></dd>
+    <dt>Slavic ancestry</dt>
+    <dd><b>Not distinguishable from zero</b>; bounded above at roughly 20%. <b>Moderate confidence.</b></dd>
+    <dt>Separating the father's contribution</dt>
+    <dd><b>Not achievable</b> from these two samples. See §7.</dd>
+  </dl>
+
+  <h2><span class="num">Section 1</span>Samples, data, and quality control</h2>
+  <div class="scroll"><table>
+    <thead><tr><th></th><th class="n">Son</th><th class="n">Mother</th></tr></thead>
+    <tbody>
+      <tr><td>Sequencing platform</td><td class="n">MGI / DNBSEQ</td><td class="n">Illumina</td></tr>
+      <tr><td>Aligner</td><td class="n">minimap2 + BQSR</td><td class="n">DRAGEN</td></tr>
+      <tr><td>Mean depth (chr1)</td><td class="n">35.3×</td><td class="n">38.5×</td></tr>
+      <tr><td>Contamination</td><td class="n">0.79%</td><td class="n">0.21%</td></tr>
+      <tr><td>Autosomal call rate</td><td class="n">99.90%</td><td class="n">99.93%</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>The relationship is confirmed genetically.</strong> KING kinship coefficient 0.2436 with IBS0 = 0.0017 across 579,942 SNPs — the expected signature of a parent–offspring pair.</p>
+  <p>An independent confirmation emerged from haplotype analysis: when each genome was reconstructed from a panel of 1,310 other individuals, <strong>the son drew 46.2% of his genome from his mother and she 44.4% from him</strong>, against a theoretical 50%. The method was given no information about their relationship.</p>
+  <p><strong>Neither genome carries a run of homozygosity longer than 4 Mb</strong> (86 and 90 segments; 61.7 and 65.0 Mb total; longest 2.81 Mb), indicating no recent consanguinity.</p>
+
+  <h2><span class="num">Section 2</span>Paternal lineage</h2>
+  <p class="lede">Haplogroup <strong>R-FGC4547</strong>, on the path R1a → M417 → Z645 → Z93 → Z94 → Z2124 → Z2122 → Y57 → FGC4547.</p>
+  <p>Called from 4.55 million Y-chromosome reads at ~14.9× coverage and independently confirmed by YFull, which places the clade's formation at <strong>≈4,100 years ago</strong> and the common ancestor of its known members at <strong>≈3,600 years ago</strong>.</p>
+
+  <h3>A genuinely private branch</h3>
+  <p>The son carries <strong>32 Y variants</strong> not present in YFull's database, all verified directly in his own reads (100% derived, zero reference reads).</p>
+  <p>Because "absent from a commercial database" is a weak claim, the same positions were tested against <strong>nine ancient genomes</strong> spanning 4,605 BP to the 10th century CE — every published R1a-Z93 descendant with usable read-level data, from the steppe, the Carpathian Basin, Moldova and central Russia.</p>
+  <p><strong>31 of the 32 variants were testable in at least one ancient genome, 23 of them at transversion sites</strong> — immune to the chemical damage that mimics variants in ancient DNA — <strong>and not one was derived in any sample.</strong> Each ancient sample independently reproduced its own published haplogroup from reads alone, the positive control for the method.</p>
+  <p><strong>An incidental cross-check of the dating.</strong> Four Bronze Age men from Russia (4,504–4,605 BP) have coverage at FGC4547 and <strong>all four carry the ancestral allele</strong> — they predate the mutation. YFull's ~4,100-year estimate came from a mutation-rate calculation on modern samples; archaeological samples older than that estimate lacking the mutation is independent confirmation from a different kind of evidence.</p>
+
+  <h3>The lineage reached Greece from the north, not through Anatolia</h3>
+  <p>Autosomal models could not distinguish a steppe route from a Caucasus one (§7). The Y chromosome can, because it is a single lineage with a known distribution in the ancient record. All 20,763 ancient individuals in the reference database with an automated Y call were tabulated.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Region, Bronze Age or earlier</th><th class="n">Individuals</th><th class="n">Carrying R1a-Z93</th></tr></thead>
+    <tbody>
+      <tr><td class="pop">Eurasian steppe</td><td class="n">2,035</td><td class="n">65 (3.19%)</td></tr>
+      <tr><td class="pop">Anatolia and the Caucasus</td><td class="n">554</td><td class="n">0 (0.00%)</td></tr>
+      <tr><td class="pop">Aegean</td><td class="n">309</td><td class="n">1 (0.32%)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Anatolia and the Caucasus are <strong>zero in every pre-Classical period</strong>: 0/188 Mesolithic, 0/63 Neolithic, 0/139 Chalcolithic, 0/164 Bronze Age, 0/182 Late Bronze/Iron Age. On the steppe the clade appears exactly when archaeology predicts — 0% before the Chalcolithic, 1.0% Chalcolithic, <strong>9.5% Bronze Age</strong>, 13.0% Late Bronze/Iron Age.</p>
+  <p><strong>The zero is well-sampled, not an absence of data.</strong> With 0 observed in 554 individuals, the 95% upper bound on the clade's frequency there is <strong>0.54%</strong>. If its true frequency had matched the steppe's 9.5%, the probability of observing none in 554 is <strong>9.6 × 10<sup>−25</sup></strong>. The region's lineages are well characterised — J2 (13.2%), G2 (8.1%) and J1 (5.4%) dominate — and R1 as a whole does not reach the top eight there, against 27.7% on the steppe.</p>
+  <p><strong>The clade was in the southern Balkans in time.</strong> The two pre-Classical Z93 carriers nearest the Aegean are both from Thrace, in present-day Bulgaria, one dated <strong>1866–1615 calBCE</strong>.</p>
+  <p class="note">What this does not show. One uniparental lineage is one ancestor per generation. The autosomal steppe contribution is only 10–15%, and a steppe paternal line on a majority-Anatolian genome is the ordinary pattern for the post-Bronze-Age Aegean. It also does not establish descent from those Thracian individuals, who are typed at a much coarser resolution than this lineage.</p>
+
+  <h2><span class="num">Section 3</span>Maternal lineage</h2>
+  <p><strong>mtDNA haplogroup K1a19</strong> in both individuals (Haplogrep 3 quality 0.9931), with mother and son <strong>identical at all 16,569 positions</strong> — as expected for maternal inheritance, and a further confirmation of the relationship.</p>
+  <p>Three ancient mitogenomes differ by a <strong>single substitution</strong>:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">Age</th></tr></thead>
+    <tbody>
+      <tr><td class="pop">Armenia, Noratus (Antiquity)</td><td class="n">~2,225 BP</td></tr>
+      <tr><td class="pop">Turkey, Imperial Roman</td><td class="n">~1,900 BP</td></tr>
+      <tr><td class="pop">Croatia, Late Antiquity</td><td class="n">~1,324 BP</td></tr>
+    </tbody>
+  </table></div>
+  <p>The geographic spread of the closest matches — Armenia, Anatolia, the Adriatic — is consistent with a lineage distributed around the eastern Mediterranean in Classical antiquity, but three samples cannot localise an origin.</p>
+  <p><strong>The maternal line cannot be dated from these data.</strong> The mitogenome carries no private variants outside known mutational hotspots, so there is no molecular clock to read.</p>
+
+  <h2><span class="num">Section 4</span>Autosomal ancestry composition</h2>
+  <p>Three methods that share almost no assumptions were applied. All three agree.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Ancestry component</th><th class="n">qpAdm</th><th class="n">ADMIXTURE (projection)</th><th class="n">ADMIXTURE (joint)</th></tr></thead>
+    <tbody>
+      <tr><td class="pop">Anatolian-Neolithic-related</td><td class="n">0.525–0.581</td><td class="n">0.527–0.538</td><td class="n">0.534–0.555</td></tr>
+      <tr><td class="pop">Caucasus/Iranian-related</td><td class="n">0.289–0.360</td><td class="n">0.300–0.303</td><td class="n">0.341–0.344</td></tr>
+      <tr><td class="pop">Steppe-related</td><td class="n">0.097–0.158</td><td class="n">0.132–0.151</td><td class="n">0.101–0.124</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>≈55% Anatolian Neolithic, ≈30% Caucasus/Iranian, ≈12% steppe.</strong></p>
+  <p><strong>qpAdm</strong> fits the genomes as a mixture of explicitly named ancient source populations, testing the fit against a set of outgroups. <strong>ADMIXTURE</strong> is an unsupervised model that infers components from 1,995 modern and ancient individuals without being told what the sources are; the number of components was chosen by cross-validation across ten independent random starts per value, and <code>K = 8</code> minimises the mean error while also being the most reproducible value tested.</p>
+  <p>The two ADMIXTURE analyses — one projecting the family onto components estimated without them, one estimating everything jointly — agree within about four percentage points and both fall inside the qpAdm ranges. Four continental control components (Native American, Sub-Saharan African, East Asian, Papuan) sit at essentially zero in both individuals, as they should.</p>
+  <p class="note">A note on labels. The Anatolian-Neolithic component's strongest modern loadings are Sardinian and Basque. Those are the modern populations that retain the most early-farmer ancestry; this is not a claim of Sardinian or Basque descent.</p>
+  <p><strong>Robustness.</strong> These proportions are stable across every processing choice tested — variant caller, genotype-sampling method, and random seed. The proportions are reliable; formal model-acceptance p-values on a single genome are not, and are not relied on here.</p>
+
+  <h2><span class="num">Section 5</span>When the steppe component entered the Aegean</h2>
+  <p class="lede">Between <strong>≈2000 and ≈1900 BCE</strong>. The date comes from radiocarbon-dated remains, not from a molecular clock.</p>
+  <p>Every Aegean population in the reference database with usable coverage was tested for whether it requires a steppe source at all, using the same model fitted to this family.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Period</th><th>Population</th><th class="n">Steppe</th><th class="n">SE</th><th class="n">Z</th></tr></thead>
+    <tbody>
+      <tr class="absent"><td class="era">Neolithic ~6200 BCE</td><td class="pop">Nea Nikomedeia</td><td class="n">0.025</td><td class="n">0.025</td><td class="n">1.01</td></tr>
+      <tr class="absent"><td class="era">Neolithic ~5000 BCE</td><td class="pop">Peloponnese</td><td class="n">0.000</td><td class="n">0.017</td><td class="n">0.03</td></tr>
+      <tr class="absent"><td class="era">Neolithic ~4500 BCE</td><td class="pop">Crete, Aposelemis</td><td class="n">−0.011</td><td class="n">0.021</td><td class="n">−0.51</td></tr>
+      <tr class="absent"><td class="era">EBA ~2500 BCE</td><td class="pop">Nea Styra</td><td class="n">0.041</td><td class="n">0.022</td><td class="n">1.85</td></tr>
+      <tr class="absent"><td class="era">EBA ~2500 BCE</td><td class="pop">Perachora Cave</td><td class="n">−0.001</td><td class="n">0.023</td><td class="n">−0.03</td></tr>
+      <tr class="absent"><td class="era">EMBA ~2000 BCE</td><td class="pop">Crete, Hagios Charalambos</td><td class="n">0.016</td><td class="n">0.012</td><td class="n">1.28</td></tr>
+      <tr class="boundary present"><td class="boundary-note" colspan="5">Steppe ancestry becomes required — ≈2000–1900 BCE</td></tr>
+      <tr class="present"><td class="era">BA ~2000 BCE</td><td class="pop">Crete, Moni Odigitria</td><td class="n">0.087</td><td class="n">0.031</td><td class="n">2.80</td></tr>
+      <tr class="present"><td class="era">BA ~1900 BCE</td><td class="pop">Attica, Kolikrepi Spata</td><td class="n">0.108</td><td class="n">0.030</td><td class="n">3.55</td></tr>
+      <tr class="present"><td class="era">BA ~1300 BCE</td><td class="pop">Palace of Nestor</td><td class="n">0.159</td><td class="n">0.018</td><td class="n">9.03</td></tr>
+      <tr class="present"><td class="era">BA ~1300 BCE</td><td class="pop">Kastrouli</td><td class="n">0.179</td><td class="n">0.023</td><td class="n">7.91</td></tr>
+      <tr class="present"><td class="era">LBA ~1400 BCE</td><td class="pop">Crete</td><td class="n">0.106</td><td class="n">0.011</td><td class="n">9.35</td></tr>
+      <tr class="present"><td class="era">LBA ~1400 BCE</td><td class="pop">Greece (general)</td><td class="n">0.105</td><td class="n">0.017</td><td class="n">6.16</td></tr>
+      <tr class="present"><td class="era">LBA ~1400 BCE</td><td class="pop">Peloponnese</td><td class="n">0.170</td><td class="n">0.022</td><td class="n">7.71</td></tr>
+      <tr class="present"><td class="era">LBA ~1300 BCE</td><td class="pop">Achaea</td><td class="n">0.275</td><td class="n">0.018</td><td class="n">14.92</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>All six Neolithic-to-Early-Middle-Bronze-Age populations are indistinguishable from zero. All eight Bronze and Late Bronze Age populations require steppe ancestry.</strong> No population falls on the wrong side of the division, and the two populations either side of it are <strong>both Cretan</strong>, so the pattern tracks time rather than geography.</p>
+  <p><strong>This reproduces a published result independently</strong> (Lazaridis et al. 2017; Clemente et al. 2021): Minoan-era Crete lacks the steppe component, mainland Mycenaean-era populations carry roughly 4–16% of it. The expected outcome was recorded before the analysis was run, so the agreement validates the pipeline rather than reflecting a result tuned to match.</p>
+  <p><strong>This family's steppe proportion (0.097–0.158) falls inside the Mycenaean-era range (0.105–0.179)</strong> — consistent with descent from populations already carrying this ancestry in the Bronze Age, rather than from any later introduction.</p>
+  <p class="note">Caveat. The Caucasus hunter-gatherer source rests on 3 individuals, so the formal model p-values are fragile; the conclusion rests on the steppe weight and its standard error, which are well determined.</p>
+
+  <h2><span class="num">Section 6</span>Position among modern populations</h2>
+  <p>Both individuals fall within the eastern Mediterranean cluster in principal component analysis of 27,594 individuals.</p>
+  <p>A finer-grained haplotype analysis compared the family against 19 Greeks from the Human Origins panel, using a shared set of 39 donor populations. The family falls <strong>inside the Greek range for 37 of 39 donor populations</strong>, but its position within those ranges is systematically directional:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Donor group</th><th class="n">Mean deviation from the Greek average</th></tr></thead>
+    <tbody>
+      <tr><td class="pop">West Asia / Caucasus (16 populations)</td><td class="n">+1.49</td></tr>
+      <tr><td class="pop">Europe, other (12 populations, no prediction)</td><td class="n">−0.34</td></tr>
+      <tr><td class="pop">NE Europe / Slavic / Baltic (11 populations)</td><td class="n">−1.37</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>The separation is complete: every one of the 16 West Asian donor populations ranks above every one of the 11 northeastern European ones</strong> (0 of 176 pairwise comparisons discordant), with the unpredicted European group falling exactly between them.</p>
+  <p>So this family sits within Greek variation but shifted toward West Asia and away from Slavic-speaking populations. Two caveats limit how far this can be pushed: the comparison is one family against a population sample, and it is a comparison to 19 specific individuals rather than to Greeks in general.</p>
+  <p><strong>Slavic ancestry is not distinguishable from zero</strong> in formal modelling, with an upper bound of roughly 20%. Where a model includes an Aegean source population, the fitted Slavic contribution collapses to 5–10% with standard errors spanning zero; where no Aegean source is available, a Slavic proxy absorbs unrelated variance and the apparent contribution rises. The haplotype analysis above points the same way from an independent direction.</p>
+  <p class="note">A related analysis, fine-scale haplotype clustering, was still computing at the time of writing and may refine this section.</p>
+
+  <h2><span class="num">Section 7</span>What these data cannot determine</h2>
+  <p>Reporting these clearly is part of the result.</p>
+
+  <div class="limit">
+    <h3>The father's genetic contribution cannot be isolated</h3>
+    <p>The original aim included characterising the deceased father by subtracting the mother's contribution from the son's genome. <strong>This is not achievable with these two samples</strong>, for a reason that is technical rather than biological.</p>
+    <p>The two genomes were sequenced on <strong>different platforms</strong> — the son on MGI/Complete Genomics DNBSEQ, the mother on Illumina. This produces small systematic differences in genotype calls that are larger than the biological signal being sought.</p>
+    <p>The decisive test: the son's maternally-inherited alleles <em>are</em> his mother's DNA, so a statistic comparing them must be zero. It is not.</p>
+    <div class="scroll"><table>
+      <thead><tr><th></th><th class="n">Comparison containing no biology</th><th class="n">Comparison containing the father</th></tr></thead>
+      <tbody>
+        <tr><td>Original genotype calls</td><td class="n">0.000617</td><td class="n">0.000412</td></tr>
+        <tr><td>After context filtering</td><td class="n">0.000524</td><td class="n">0.000127</td></tr>
+        <tr><td>After re-calling with GATK</td><td class="n">0.000524</td><td class="n">0.000222</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>The comparison that should be zero is consistently larger than the comparison that contains the father</strong>, and all 28 reference populations deviate in the same direction — a pattern ancestry cannot produce, since it would require the same bias relative to Sardinians, Saudis, Lithuanians and Chechens alike.</p>
+    <p>Every available remedy was tested. Re-aligning the reads removed only ~4% of the effect. Filtering to well-behaved sequence contexts did not remove it. <strong>Re-calling both genomes with an independent variant caller did not remove it</strong> — even though that caller eliminated ~91% of the underlying allelic imbalance, confirming the problem is the sequencing chemistry itself and not the software applied to it.</p>
+    <p><strong>The only route to this question is a new sample</strong> — ideally the father's sister, sequenced on the same platform as the mother, allowing direct observation of the paternal side rather than reconstruction by subtraction.</p>
+  </div>
+
+  <div class="limit">
+    <h3>The admixture cannot be dated from these genomes directly</h3>
+    <p>Methods that date admixture from the decay of ancestry along chromosomes have a resolution limit of roughly 60 generations under these conditions. The event of interest is roughly 130 generations old, placing it beyond reach. Three such analyses were attempted and none produced a usable signal; the timing in §5 comes from dated ancient remains instead, which is the more reliable route regardless.</p>
+  </div>
+
+  <div class="limit">
+    <h3>The route question is answered only for the paternal line</h3>
+    <p>Autosomal models cannot distinguish a steppe route from a Caucasus/Armenian one: the two fit comparably, and which is preferred changes with the choice of reference population. This reflects genuine statistical non-identifiability, not a limitation of effort. The Y-chromosome evidence in §2 answers the question for the paternal lineage only.</p>
+  </div>
+
+  <h2><span class="num">Section 8</span>Methods</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Stage</th><th>Software</th></tr></thead>
+    <tbody>
+      <tr><td>Alignment QC, contamination</td><td>verifyBamID2</td></tr>
+      <tr><td>Genotype calling</td><td>bcftools mpileup; pileupCaller; GATK 4.6.2 HaplotypeCaller</td></tr>
+      <tr><td>Reference data</td><td>AADR v66.p1 (1240K, Human Origins, mtDNA)</td></tr>
+      <tr><td>Relatedness</td><td>KING</td></tr>
+      <tr><td>Y haplogroup</td><td>Yleaf; YFull (independent confirmation)</td></tr>
+      <tr><td>mtDNA haplogroup</td><td>Haplogrep 3</td></tr>
+      <tr><td>Principal components</td><td>smartpca (EIGENSOFT)</td></tr>
+      <tr><td>Formal admixture modelling</td><td>ADMIXTOOLS 2 (qpAdm, f3, f4)</td></tr>
+      <tr><td>Unsupervised clustering</td><td>ADMIXTURE, 10 seeds per K</td></tr>
+      <tr><td>Phasing</td><td>SHAPEIT5 against the 1000 Genomes 3,202-genome panel</td></tr>
+      <tr><td>Haplotype painting</td><td>ChromoPainter v2; fineSTRUCTURE</td></tr>
+      <tr><td>Admixture dating</td><td>DATES; fastGLOBETROTTER</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Statistical practice</h3>
+  <p>Two conventions were adopted after they proved to matter.</p>
+  <p><strong>Replicate random seeds.</strong> Reducing a diploid genome to one allele per position involves a random choice. Repeating an identical analysis with different random seeds moved model p-values as much as 15-fold, while the ancestry <em>proportions</em> moved only slightly. Proportions are therefore reported and p-values are not relied upon.</p>
+  <p><strong>Pre-registered expectations and negative controls.</strong> Where a published result could be reproduced as a check, the expected outcome was written down before the analysis was run. Where an analysis could produce a spurious positive, a group expected to show no signal was analysed alongside. One dating analysis produced five mutually consistent, statistically strong results that were rejected on the strength of such a control — without it, those results would have looked entirely sound.</p>
+
+  <h2><span class="num">Section 9</span>Interpretation</h2>
+  <p>The genetic evidence describes a family whose ancestry is characteristic of the Aegean since the Bronze Age: predominantly descended from the Neolithic farming populations of Anatolia who settled Greece from roughly 6500 BCE, with a substantial Caucasus/Iranian-related component, and a minority steppe-related component that entered the region around 2000–1900 BCE — the period associated with the emergence of Mycenaean Greece.</p>
+  <p>The proportions place this family within the range measured in Mycenaean-era remains, rather than requiring any later population movement. Consistently, no detectable Slavic contribution was found, and the fine-scale haplotype evidence places the family toward the West Asian end of Greek variation.</p>
+  <p>The paternal line is a distinct thread within that picture: it descends from Bronze Age steppe populations, reached the southern Balkans by the Middle Bronze Age, and has since accumulated 32 variants found in no other tested genome, ancient or modern.</p>
+
+  <p class="figures">All analyses run on a university high-performance computing cluster. Version and parameter records retained.</p>
+</article>
+
+<!-- ============================= PLAIN ============================= -->
+<article class="doc" id="doc-plain" role="tabpanel" aria-labelledby="tab-plain" hidden>
+
+  <div class="title-block">
+    <h1>What your DNA shows</h1>
+    <p class="standfirst">A companion to the full report. The same findings, in ordinary English.</p>
+  </div>
+
+  <h2>What we set out to do</h2>
+  <p>Two whole genomes were read from start to finish — a mother's and her adult son's. A genome is the complete set of DNA instructions a person carries, about three billion chemical letters long. Reading all of it, rather than the small sample that consumer ancestry kits look at, makes it possible to ask deeper questions: not "which country are my relatives from" but "which ancient populations did my ancestors belong to, and when did they arrive where they arrived."</p>
+  <p>The first thing the data confirmed was the obvious thing. The two samples are genetically a mother and her son, exactly as expected — the DNA sharing between them is textbook. Neither genome shows signs of cousin marriage anywhere in the recent family tree. These are dull results, but they are the checks that let the interesting results be trusted.</p>
+
+  <h2>The deep ancestry: three ancient populations</h2>
+  <p>Most of Greek ancestry, and yours, traces back to a small number of ancient populations that mixed thousands of years ago. Your genomes break down roughly as follows.</p>
+  <p><strong>About 55% comes from Anatolian Neolithic farmers.</strong> These were the people who invented farming in what is now Turkey and the Near East, and who spread into Greece from roughly 6500 BCE, bringing wheat, sheep and villages with them. They are the deepest and largest layer of your ancestry.</p>
+  <p><strong>About 30% comes from a Caucasus and Iranian-related population</strong> — ancient hunter-gatherers and their descendants from the mountains between the Black Sea and the Caspian.</p>
+  <p><strong>About 12% comes from the Eurasian steppe</strong> — the grasslands north of the Black Sea, home to mobile herding peoples of the Bronze Age.</p>
+  <p>Please read those percentages as approximate. Three completely different statistical methods were used to work them out, methods that share almost none of their assumptions, and all three landed in the same place — which is why these numbers are among the firmest things in the report. But each method gives a range rather than a single figure, and the ranges are a few percentage points wide. "Roughly 55, 30 and 12" is the honest way to say it.</p>
+  <p><strong>One thing worth being clear about.</strong> "55% Anatolian farmer" does not mean 55% Turkish. These labels name populations that lived seven to nine thousand years ago, long before any modern nation, language or border existed. Modern Turks, modern Greeks and modern Italians all carry ancestry from those same farmers in differing amounts. The same caution applies to a curiosity in the analysis: the modern populations that best represent the "Anatolian farmer" component happen to be Sardinians and Basques, simply because those groups have held onto more early-farmer ancestry than anyone else. It is not a claim of Sardinian or Basque relatives.</p>
+
+  <h2>When the steppe ancestry arrived: around 2000–1900 BCE</h2>
+  <p>The steppe component is the smallest slice, and the most historically loaded one, because its arrival in Greece coincides with the emergence of Mycenaean civilisation — the world of Agamemnon, Linear B tablets and shaft graves.</p>
+  <p>The date here does not come from any clock inside your DNA. It comes from skeletons. Every ancient Greek and Aegean population with usable DNA and a radiocarbon date was tested with the same method used on your genomes, and asked a simple question: does this population need steppe ancestry to explain it, or not?</p>
+  <p>The answer splits cleanly in time. Every population from the Neolithic through the early Middle Bronze Age — six of them, spanning roughly 6200 to 2000 BCE — shows no steppe ancestry at all. Every population from about 2000 BCE onward — eight of them, including the people buried at the Palace of Nestor and across Crete, Attica and the Peloponnese — requires it. Not one population sits on the wrong side of that line. And helpfully, the two populations either side of the boundary are both Cretan, so the pattern is tracking time rather than geography.</p>
+  <p>Your family's steppe proportion falls inside the range measured in Mycenaean-era remains. That is consistent with descent from populations that already carried this ancestry in the Bronze Age, rather than from any later arrival into Greece. It is a consistency, not a pedigree — but it is a real one.</p>
+  <p>This part of the analysis also served as a test of the whole pipeline. The expected answer, from published research on Minoan and Mycenaean remains, was written down <em>before</em> the analysis was run. It came out matching. That is reassurance that the machinery works, not a result bent to fit.</p>
+
+  <h2>The father's line: from the steppe, through the Balkans</h2>
+  <p>Everyone inherits a Y chromosome from their father, essentially unchanged, so it traces one single thread — father to father to father — back through time. The family of related Y chromosomes a man belongs to is called a <em>haplogroup</em>, and it works rather like a surname that mutates very slowly: every few generations a small typing error appears, and that error is passed down to all descendants, marking out a branch of the tree.</p>
+  <p>Your paternal haplogroup is called <code>R-FGC4547</code>, a branch of a large family known as R1a-Z93 that formed roughly 4,100 years ago.</p>
+  <p><strong>The branch is genuinely your own.</strong> The son carries 32 mutations on his Y chromosome that appear in no other genome yet tested — not in the large commercial databases of living men, and not in ancient skeletons. Because "absent from a database" is a weak claim on its own, all 32 positions were checked directly against nine ancient men from the steppe, Hungary, Moldova and Russia — every published relative of this lineage whose data was good enough to test. Not one of them carried a single one of the 32. This is a private branch of the human family tree, and it is yours.</p>
+  <p>There was an unexpected bonus in that check. Four Bronze Age men from Russia, around 4,500 years old, turn out to be just slightly too early: they lack the defining mutation of your branch entirely. The estimated age of the branch, about 4,100 years, was calculated from mutation rates in living men — a completely different kind of evidence. Having archaeological skeletons that are older than that estimate and correspondingly <em>lack</em> the mutation is an independent confirmation of the date.</p>
+  <p><strong>And the route can be established.</strong> This matters because there are two plausible ways steppe ancestry could reach Greece: south through the Caucasus and across Anatolia, or west across the steppe and down through the Balkans. Your overall genome cannot tell these apart — both fit the data about equally well, and which one looks better depends on arbitrary choices in the analysis. That is a genuine dead end, not a lack of effort.</p>
+  <p>The Y chromosome can tell them apart, because it is a single lineage whose distribution in the ancient record is known. Of 554 ancient men from Anatolia and the Caucasus dating to the Bronze Age or earlier, <strong>not one</strong> belongs to R1a-Z93 — zero in every single period, from the Mesolithic through the Iron Age. On the steppe, by contrast, the lineage is present in about 3% of men overall, rising to roughly one man in ten during the Bronze Age, appearing precisely when archaeology says it should. That Anatolian zero is not an absence of data; 554 men is plenty, and the region's actual lineages are well known and different. Meanwhile the two nearest ancient carriers of this lineage to the Aegean are both from Thrace, in today's Bulgaria — one of them dated to roughly 1866–1615 BCE, which puts the lineage in the southern Balkans at the right moment.</p>
+  <p>So: the paternal line came down from the steppe via the Balkans, not through Anatolia. This is one of the firmest findings in the report.</p>
+  <p>Two honest qualifications. A single paternal line represents just one ancestor per generation out of many, and a steppe paternal line sitting atop a mostly-Anatolian genome is the ordinary pattern for the Aegean after the Bronze Age — this is not a rewriting of the overall ancestry. And it does not mean descent from those particular Thracian men, whose DNA was read at a much coarser resolution than yours.</p>
+
+  <h2>The mother's line</h2>
+  <p>Mitochondrial DNA is a tiny separate loop of DNA passed only from mother to child, so it traces the maternal thread the way the Y traces the paternal one. Yours is haplogroup <code>K1a19</code>, and mother and son match at every one of its 16,569 positions — as they must, and a further confirmation of the relationship.</p>
+  <p>The closest ancient relatives found differ by a single letter, and they come from Armenia, Roman-era Turkey and late-antique Croatia. That spread — Caucasus, Anatolia, the Adriatic — fits a lineage distributed around the eastern Mediterranean in Classical antiquity. But three skeletons cannot pin down where it started, and it would be overreaching to claim otherwise.</p>
+  <p><strong>The maternal line cannot be dated.</strong> Dating a lineage depends on counting up mutations unique to it, and this mitochondrial genome carries none outside the handful of positions that mutate so often they are useless for the purpose. There is simply no clock to read here. This is a genuine blank, not a number awaiting refinement.</p>
+
+  <h2>Where you sit among modern Greeks</h2>
+  <p>Both individuals fall comfortably within the eastern Mediterranean cluster when compared against tens of thousands of people worldwide, and within the range of Greek variation specifically.</p>
+  <p>Within that range, though, the position is consistently directional: shifted toward West Asia and the Caucasus, and away from northeastern European and Slavic-speaking populations. The pattern is strikingly clean — of the donor populations used in the comparison, every single West Asian one ranks above every single northeastern European one, with the rest of Europe falling neatly in between. Relatedly, formal modelling finds <strong>no detectable Slavic ancestry</strong>: the estimate cannot be distinguished from zero, with an upper limit of around 20%.</p>
+  <p>Treat this section as suggestive rather than settled. It compares one family against 19 specific Greek individuals, not against Greeks in general, and one further analysis was still running when the report was written.</p>
+
+  <h2>What could not be answered</h2>
+  <p>This is as much a part of the result as the findings, and it should not be dressed up.</p>
+
+  <div class="limit">
+    <h3>The father's genetic contribution could not be isolated</h3>
+    <p>The original hope was to reconstruct something about the deceased father by comparing mother and son and, in effect, subtracting her out — whatever the son has that his mother does not have must have come from his father. This did not work. Not partly, not approximately: it failed.</p>
+    <p>The reason is technical rather than biological. The two genomes were read on different brands of sequencing machine — the son's on one manufacturer's system, the mother's on another's. Each machine makes its own small, systematic reading errors, and the difference between the two machines turned out to be <em>larger</em> than the biological signal being looked for.</p>
+    <p>There is a decisive way to see this. The half of the son's DNA that he inherited from his mother simply <em>is</em> his mother's DNA. A measurement comparing those two things must come out at zero, because there is no biology in it at all. It did not come out at zero — and worse, it came out consistently <em>larger</em> than the measurement that actually contained the father's contribution. The signal being sought was smaller than the noise sitting on top of it.</p>
+    <p>Every available remedy was tried. Re-processing the raw data from scratch removed about 4% of the problem. Filtering down to the best-behaved stretches of the genome did not remove it. Re-reading both genomes with entirely different analysis software did not remove it either — even though that software fixed most of the underlying irregularity, which confirms the problem lies in the sequencing chemistry itself, not in any software choice. There is no clever correction waiting to be found.</p>
+    <p><strong>What would answer it: the father's sister.</strong> Sequencing the aunt would allow the paternal side to be observed directly rather than reconstructed by subtraction. Crucially, her sample would need to be sequenced on <strong>the same platform as the mother's</strong> — otherwise the identical problem reappears in a new form. That is the one clear route forward from here.</p>
+  </div>
+
+  <p><strong>The mixing itself cannot be dated from your genomes.</strong> There are methods that date ancient mixing events by measuring how thoroughly the different ancestries have been shuffled along the chromosomes, but they reach back only about 60 generations. The event of interest is around 130 generations ago — twice as far as the method can see. Three attempts produced nothing usable. The date of 2000–1900 BCE comes from radiocarbon-dated skeletons instead, which is the better route anyway.</p>
+  <p><strong>The route question is answered for the paternal line only.</strong> As noted above, the overall genome cannot distinguish a steppe route from a Caucasus one. Only the Y chromosome settles it, and it settles it for that one thread.</p>
+
+  <h2>In short</h2>
+  <p>Your ancestry is characteristic of the Aegean since the Bronze Age: mostly descended from the Neolithic farmers who brought agriculture from Anatolia into Greece around 6500 BCE, with a substantial Caucasus/Iranian-related layer, and a minority steppe component that arrived around 2000–1900 BCE, at the dawn of Mycenaean Greece — in proportions matching the Mycenaean-era dead themselves. No Slavic ancestry is detectable. The maternal line runs back into the eastern Mediterranean of Classical antiquity, undatable with present data. And the paternal line is a thread of its own: down from the Bronze Age steppe, through the Balkans, into Greece — carrying 32 mutations that, so far as anyone can currently tell, belong to no one else alive or dead.</p>
+</article>
+
+<footer>
+  Contains identifiable genetic information for two living people. Please treat accordingly.
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var tabs = [
+    {btn: document.getElementById('tab-full'),  panel: document.getElementById('doc-full')},
+    {btn: document.getElementById('tab-plain'), panel: document.getElementById('doc-plain')}
+  ];
+  function select(i){
+    tabs.forEach(function(t, j){
+      var on = (i === j);
+      t.btn.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.panel.hidden = !on;
+    });
+    window.scrollTo({top: 0, behavior: 'auto'});
+  }
+  tabs.forEach(function(t, i){
+    t.btn.addEventListener('click', function(){ select(i); });
+  });
+})();
+</script>
+</body>
+</html>
