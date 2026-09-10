@@ -104,6 +104,9 @@ h2 .num{
 }
 h3{font-family:var(--sans); font-weight:600; font-size:1rem; margin:2rem 0 .5rem}
 p{margin:0 0 1.05rem; max-width:38rem}
+ul{margin:0 0 1.05rem 1.15rem; padding:0; max-width:38rem}
+li{margin:0 0 .55rem; padding-left:.15rem}
+li:last-child{margin-bottom:0}
 strong{font-weight:600}
 em{font-style:italic}
 code{font-family:var(--mono); font-size:.88em; color:var(--oxide)}
@@ -204,7 +207,7 @@ footer{
     <h1>Genomic ancestry of a Greek mother and son</h1>
     <p class="standfirst">Findings, and the analysis supporting each of them. Where a question could not be answered, the reason is given rather than a weakly-supported answer.</p>
     <p class="meta">
-      <span>Report 2026-09-10</span>
+      <span>Report 2026-09-10 &middot; rev. 2</span>
       <span>2 whole genomes</span>
       <span>1,232,346 genotyped positions</span>
     </p>
@@ -217,7 +220,7 @@ footer{
     <dt>Paternal origin</dt>
     <dd>Steppe-derived, and <b>did not arrive via Anatolia or the Caucasus</b> — the lineage is absent from 554 Bronze-Age-or-earlier men of that region, and present in 3.2% of steppe men. <b>High confidence.</b></dd>
     <dt>Maternal lineage</dt>
-    <dd>mtDNA <b>K1a19</b>, identical in mother and son at all 16,569 positions. <b>High confidence.</b></dd>
+    <dd>mtDNA <b>K1a19</b>, identical in mother and son at all 16,569 positions. Documented as <b>Armenian</b>, on the unbroken maternal line; the closest ancient mitogenomes (one substitution) are Armenia 2,225 BP and Roman Anatolia 1,900 BP, and 2 of the 3 K1a19 mitogenomes in GenBank come from Armenian studies. See &sect;10. <b>High confidence.</b></dd>
     <dt>Autosomal ancestry</dt>
     <dd>Approximately <b>55% Anatolian-Neolithic-related, 30% Caucasus/Iranian-related, 12% steppe-related</b>. Three independent methods agree. <b>High confidence.</b></dd>
     <dt>Timing of the steppe component</dt>
@@ -465,6 +468,82 @@ footer{
   <p>Two questions asked of these data could not be answered by them, and are reported as such rather than resolved: the father's individual contribution, blocked by a sequencing-platform artefact that survived every remedy tested, and whether the steppe influx was male-biased, for which the available X-chromosome data are too sparse by a factor of 2.5 to detect even a maximal effect.</p>
   <p>The paternal line is a distinct thread within that picture: it descends from Bronze Age steppe populations, reached the southern Balkans by the Middle Bronze Age, and has since accumulated 32 variants found in no other tested genome, ancient or modern.</p>
 
+  <h2><span class="num">Section 10</span>Post-hoc: the documented family history</h2>
+  <p class="lede">Everything in sections 1&ndash;9 was completed and written up <strong>before</strong> the family's origins were disclosed. That order is what makes the agreement below meaningful &mdash; and it equally means none of these results may be described as having predicted the history.</p>
+  <p>They are consistency checks, run blind. Five attempts to convert the pedigree into a measurement failed, and those are reported at the same length as the successes.</p>
+
+  <h3>The documented history</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Line</th><th>Origin</th></tr></thead>
+    <tbody>
+      <tr><td class="pop">Mother's family</td><td><strong>Ni&#287;de, Cappadocia</strong> &mdash; central Anatolia</td></tr>
+      <tr><td class="pop">Mother's mother's father</td><td><strong>Andros</strong> (Cyclades)</td></tr>
+      <tr><td class="pop">Mother's mother's mother</td><td><strong>Armenian</strong> &mdash; on the unbroken maternal line</td></tr>
+      <tr><td class="pop">Mother's father's mother</td><td><strong>Lesbos</strong> (eastern Aegean)</td></tr>
+      <tr><td class="pop">Father's family</td><td><strong>Kasos</strong> (Dodecanese)</td></tr>
+      <tr><td class="pop">Father's father's line</td><td>possibly <strong>Rhodes</strong> (Dodecanese)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Five regions, four of them Aegean islands or Anatolia, and <strong>no mainland Balkan line</strong>.</p>
+
+  <h3>What the blind analyses had already found</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Finding, computed blind</th><th>Documented history</th></tr></thead>
+    <tbody>
+      <tr class="present"><td>Low early-medieval northern ancestry: <strong>0.002 &plusmn; 0.087</strong> (son) and <strong>0.121 &plusmn; 0.090</strong> (mother) against mainland Greek <strong>0.276 &plusmn; 0.049</strong>. The son's deficit is significant (Z = &minus;2.73); the mother's is not (Z = &minus;1.51), and neither value is distinguishable from zero.</td><td class="pop">No mainland Balkan line at all</td></tr>
+      <tr class="present"><td>Distinguishable from mainland Greeks (p = 2.6&times;10<sup>&minus;7</sup>, 1.0&times;10<sup>&minus;5</sup>), <strong>replicated on a second independent panel of 17 Greeks</strong> (p = 2.2&times;10<sup>&minus;6</sup>, 8.0&times;10<sup>&minus;5</sup>)</td><td class="pop">No mainland ancestry in any line</td></tr>
+      <tr class="present"><td><strong>Indistinguishable from Cretan Greeks alone</strong>, of every modern population tested (p = 0.070, 0.185)</td><td class="pop"><strong>Kasos</strong>, ~50 km from Crete</td></tr>
+      <tr class="present"><td><strong>Indistinguishable from a Byzantine burial on Chios</strong> (p = 0.089, 0.072), which mainland Greeks differ from (p = 2.5&times;10<sup>&minus;5</sup>)</td><td class="pop"><strong>Lesbos</strong> is the next island north of Chios</td></tr>
+      <tr class="present"><td>Distinguishable from modern Turkish (p = 1.8&times;10<sup>&minus;10</sup>)</td><td class="pop">Cappadocian <strong>Greeks</strong>, not Turks</td></tr>
+      <tr class="present"><td>Haplotype sharing tilted toward Anatolia, the Levant, the Caucasus and Crete, away from the Balkans and northern Europe (33 of 34 populations, P = 2&times;10<sup>&minus;9</sup>)</td><td class="pop">Central Anatolia, eastern Aegean, Cyclades, Dodecanese</td></tr>
+      <tr class="present"><td>Raised Caucasus/Iranian-related ancestry relative to mainland Greeks. <strong>These figures come from a different dataset and model than &sect;4's</strong> &mdash; the Human Origins array comparison, where the family fits at 0.369 / 0.394 against mainland Greek 0.142, rather than the 1240K analysis behind &sect;4's &asymp;30%. The two are not directly comparable, and &sect;4's range is the one to quote for the family's own proportions.</td><td class="pop">Cappadocia plus an Armenian maternal line</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>The maternal line now has an origin</h3>
+  <p>Section 3 reported mtDNA <strong>K1a19</strong> confirmed by three independent routes, and also reported that it could not be dated &mdash; the mitochondrial genome carries <strong>zero private mutations</strong> &mdash; and that its geography rested on label matches. It was the weakest result in this report.</p>
+  <p>The mother's mother's mother was Armenian, so the mitochondrial genome both individuals carry descends directly from her. <strong>K1a19 <em>is</em> that Armenian lineage.</strong> Three independent lines of evidence, none of which knew this, agree.</p>
+  <p><strong>The closest ancient mitogenomes.</strong> Compared base-by-base across all 16,569 positions, three ancient genomes differ by exactly <strong>one substitution</strong>:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">Age</th><th>Group</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop">I19327</td><td class="n">2,225 BP</td><td><strong>Armenia_Noratus_Antiquity</strong></td></tr>
+      <tr class="present"><td class="pop">I14845</td><td class="n">1,900 BP</td><td><strong>Turkey_ImperialRoman</strong></td></tr>
+      <tr><td class="pop">I26767</td><td class="n">1,324 BP</td><td>Croatia_LateAntiquity</td></tr>
+    </tbody>
+  </table></div>
+  <p>The two closest by geography are Armenia and Roman Anatolia &mdash; the documented maternal line, and the documented family region.</p>
+  <p><strong>Every modern K1a19 mitogenome in existence.</strong> A search of GenBank returns <strong>three</strong> complete mitogenomes annotated K1a19, and no published paper names the haplogroup at all. Two come from Armenian studies:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Accession</th><th>Isolate</th><th>Study</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop">MK491384</td><td class="pop">31_Mu</td><td>Derenko et al. 2019 &mdash; matrilineal ancestry of <strong>Armenians</strong></td></tr>
+      <tr class="present"><td class="pop">MF362925</td><td class="pop"><strong>Erzrum_52</strong></td><td>Margaryan et al. 2017, <em>Current Biology</em> &mdash; matrilineal continuity in the <strong>South Caucasus</strong></td></tr>
+      <tr><td class="pop">MG952853</td><td class="pop">S17</td><td>Malyarchuk et al. 2018 &mdash; two <strong>Hungarian</strong> populations</td></tr>
+    </tbody>
+  </table></div>
+  <p><code>Erzrum_52</code> is from <strong>Erzurum</strong>, in the historic Armenian highlands.</p>
+  <p class="note">Two caveats stay attached. The Croatian match is equally close at one substitution and does not fit an Armenian-only story: K1a19 was present across a wide West Asian and Balkan zone, with the oldest carriers in Neolithic Iran (7,910 BP) and Chalcolithic Bulgaria (6,439 BP). And &ldquo;two of three&rdquo; is not a frequency &mdash; with three sequences in existence it partly reflects which populations get sequenced, and these groups sequence the Caucasus heavily.</p>
+
+  <h3>The paternal line and the Dodecanese</h3>
+  <p>Section 2 reported that no Greek, Anatolian or Balkan sample appears anywhere in this paternal lineage's region of the tree. A 2026 study of Deep Mani reports the only other published Greek R1a-Z93 lineage, and notes Y-STR matches for it in <strong>Karpathos and Rhodes</strong> &mdash; adjacent to Kasos, and the paternal line may be from Rhodes itself.</p>
+  <p><strong>This is a geographic coincidence, not a match.</strong> That lineage sits on a branch which separated from this family's roughly 4,500 years ago, so they are not close paternal relatives and those STR matches belong to their branch. What it supports is a target for future sampling &mdash; the Dodecanese may hold more than one R1a-Z93 lineage &mdash; rather than a result.</p>
+
+  <div class="limit">
+    <h3>What the history could not deliver</h3>
+    <p>An Armenian great-grandmother on the maternal line implies the mother carries ~25% Armenian-related ancestry and her son ~12.5%, so she should carry about twice his. That is falsifiable with a number attached. <strong>It could not be measured, in five separate attempts.</strong></p>
+    <p>A test against the distribution of 32 populations passed its own controls and found nothing &mdash; the standard errors exceed the entire spread of between-population variation. A three-source model matched to the documented regions collapsed, with weights running past &plusmn;200. A two-source retreat assigned mainland Greeks <strong>&minus;55%</strong> Armenian ancestry and Cretan Greeks <strong>+37%</strong>, failing its controls outright. An attempt to recover the father by subtracting the mother from the son produced point estimates that matched the pedigree well but dissolved under a chromosome-drop jackknife. And a comparison against the only Anatolian-Greek reference samples in existence put the family as different from three of the four, on sample sizes too small to settle it either way.</p>
+    <p>The reason is consistent across all five and is not a matter of effort: <strong>Armenians and Aegean Greeks are both mixtures of Anatolian farmers and Caucasus hunter-gatherers</strong>, so distinguishing 25% Armenian from 0% in an Aegean background means resolving a small shift in the ratio of two deep components that both populations already carry. The methods used here cannot do that.</p>
+    <p>So the Armenian ancestry is established by the <strong>mitochondrial</strong> evidence, and its <strong>proportion is not measurable</strong> with these data &mdash; a division of labour between two kinds of evidence rather than a gap in the result.</p>
+  </div>
+
+  <div class="limit">
+    <h3>One limit the disclosure exposed</h3>
+    <p>There is <strong>no Cappadocian, Karamanl&#305; or central Anatolian Greek reference sample in any panel used in this report.</strong> The mother's ancestral population is unsampled. Part of every &ldquo;differs from population X&rdquo; statement above is therefore the reference panel's gap rather than her ancestry being unusual &mdash; a caveat that could not have been identified without knowing where to look. A related one surfaced with it: the two modern Greek panels in the data differ from each other (p = 0.001), so &ldquo;Greek&rdquo; is not a single stable reference either.</p>
+    <p>And one question stays open. Relative measures cannot distinguish &ldquo;more eastern ancestry&rdquo; from &ldquo;less northern ancestry&rdquo;, because the shares sum to one, and the model that could separate them returns inadmissible weights. The family's <strong>position</strong> is established; its <strong>decomposition</strong> into the presence of one thing versus the absence of another is not.</p>
+  </div>
+
+
   <p class="figures">All analyses run on Northwestern University's Quest cluster. Version and parameter records retained.</p>
 </article>
 
@@ -550,6 +629,46 @@ footer{
 
   <p><strong>The mixing itself cannot be dated from your genomes.</strong> There are methods that date ancient mixing events by measuring how thoroughly the different ancestries have been shuffled along the chromosomes, but they reach back only about 60 generations. The event of interest is around 130 generations ago — twice as far as the method can see. Three attempts produced nothing usable. The date of 2000–1900 BCE comes from radiocarbon-dated skeletons instead, which is the better route anyway.</p>
   <p><strong>The route question is answered for the paternal line only.</strong> As noted above, the overall genome cannot distinguish a steppe route from a Caucasus one. Only the Y chromosome settles it, and it settles it for that one thread.</p>
+
+  <h2>Afterwards: what happened when you told us where the family came from</h2>
+  <p>Everything above was finished and written up before anyone doing the analysis knew a single place name from your family history. That ordering is the whole point of this section. Nothing was adjusted to land on a known answer, because the answer was not known; no method was chosen, and no borderline result kept or dropped, with the documented origins in view.</p>
+  <p>The same ordering also sets a limit on what may be claimed. None of this was a prediction. Nobody wrote down &ldquo;Kasos&rdquo; or &ldquo;Cappadocia&rdquo; in advance and then checked. What follows are consistency checks: results computed blind, held up afterwards against the documented history to see whether the two accounts sit comfortably together. They do, in several independent places &mdash; but &ldquo;consistent with&rdquo; is the strongest phrase that belongs here.</p>
+  <p><strong>The documented origins.</strong> The mother's family were Greeks of Ni&#287;de, in Cappadocia, central Anatolia. Her mother's father came from Andros, in the Cyclades. Her mother's mother was Armenian, and stands on the unbroken mother-to-daughter line. Her father's mother came from Lesbos, in the eastern Aegean. The father's family came from Kasos, in the Dodecanese, with the direct father-to-son line possibly from Rhodes. Five regions; four of them Aegean islands or Anatolia; and not one mainland Greek or Balkan line anywhere.</p>
+
+  <h3>Where the blind results and the history agree</h3>
+  <ul>
+    <li><strong>No northern medieval ancestry.</strong> Modelling gives mainland Greeks about 28% early-medieval northern ancestry. Your figures come out at essentially nothing for the son and much lower than mainland Greeks for the mother. The history has no mainland line to supply it.</li>
+    <li><strong>Statistically distinguishable from mainland Greeks</strong> &mdash; and, importantly, this held when the test was repeated against a completely separate collection of 17 Greek individuals, so it is not an artefact of one reference group.</li>
+    <li><strong>Of every modern population tested, the only one you could not be told apart from was Cretan Greeks.</strong> Kasos lies about 50 km from Crete.</li>
+    <li><strong>Indistinguishable from a Byzantine-era burial on Chios</strong> &mdash; while mainland Greeks <em>can</em> be told apart from that same burial. Lesbos is the next island north of Chios.</li>
+    <li><strong>Clearly different from modern Turkish samples</strong>, which is exactly what one expects of Cappadocian <em>Greeks</em> rather than of Turks.</li>
+    <li>The eastern-Aegean tilt in the copying profiles, and the raised Caucasus/Iranian-related share, both point the same way as a history made of central Anatolia, the eastern Aegean, the Cyclades and the Dodecanese.</li>
+  </ul>
+
+  <h3>The maternal line finally has a home</h3>
+  <p>The mother-to-child line was the weakest result in the whole report. The mitochondrial genome &mdash; the small separate loop of DNA passed down only through mothers &mdash; belongs to a group called K1a19, and it carries no mutations of its own. That meant no clock to date it by and no real geography, only a label.</p>
+  <p>Then: the mother's mother's mother was Armenian, and she sits on that unbroken line. So this exact mitochondrial genome came down directly from her. K1a19 <em>is</em> that Armenian lineage in this family, and it is documented rather than inferred.</p>
+  <p>Two entirely independent things, neither of which knew the history, point the same way. The three closest ancient genomes ever found differ from yours by just one letter in 16,569 &mdash; and two of the three are from Armenia, 2,225 years ago, and Roman-era Anatolia, 1,900 years ago. Separately, a search of the world's public genetic database turns up only <strong>three</strong> complete K1a19 genomes in existence, and no scientific paper even names the group; two of the three come from Armenian studies, one of them from Erzurum, in the historic Armenian highlands.</p>
+  <p class="note">Two caveats stay attached, and they matter. The third close ancient match is from Croatia, equally close, and does not fit an Armenian-only story &mdash; this lineage was spread across a wide zone from West Asia into the Balkans, with its oldest known carriers in Neolithic Iran and Chalcolithic Bulgaria. And &ldquo;two out of three&rdquo; is not a frequency: with three sequences in the world, it partly reflects which populations researchers happen to have sequenced, and these groups have sequenced the Caucasus heavily.</p>
+
+  <h3>The paternal line and Rhodes: a coincidence worth noting, not a relative</h3>
+  <p>A 2026 study reports the only other published Greek paternal lineage from the same broad family as yours, and notes close marker matches for it in Karpathos and Rhodes &mdash; the islands immediately beside Kasos.</p>
+  <p>That is striking, and it is worth being precise about why it is not a family match. Two men can share a rare lineage recently, meaning a common ancestor within living memory or a few centuries. That is not this. Your line and that one separated roughly 4,500 years ago &mdash; as distant as two branches of that family can be. The marker matches in Karpathos and Rhodes belong to their branch, not yours. What we have is two different, long-separated branches of a rare lineage both turning up in the same small island group. That points to where someone should sample next &mdash; the Dodecanese may hold more than one branch of this lineage &mdash; rather than to a relative.</p>
+
+  <div class="limit">
+    <h3>Five things the history could not deliver</h3>
+    <p>An Armenian great-grandmother on the maternal line implies a specific, checkable number: the mother should carry about 25% Armenian-related ancestry and the son about 12.5%, so roughly twice his. <strong>Five separate attempts failed to measure it.</strong> They are reported because the way they failed is informative.</p>
+    <p>One test compared your genomes against the spread of 32 populations; it passed its own quality controls and simply found nothing, because its margin of error was wider than the entire range of variation between those populations. A model built from three source populations matched to the documented regions collapsed, producing nonsense &mdash; mixture weights running past plus or minus 200, where anything outside 0 to 100% is meaningless. A simpler two-source version handed mainland Greeks <em>minus</em> 55% Armenian ancestry and Cretan Greeks plus 37%; a negative share of ancestry cannot exist, so that model failed outright. And the attempt to reconstruct the father by subtracting the mother from the son gave numbers that looked pleasingly close to the pedigree, then dissolved once proper error bars were put on them by re-running the calculation with each chromosome left out in turn.</p>
+    <p>The reason is the same every time, and it is not a matter of effort. <strong>Armenians and Aegean Greeks are both mixtures of the same two ancient populations</strong> &mdash; Anatolian farmers and Caucasus hunter-gatherers &mdash; just in slightly different proportions. So telling 25% Armenian from 0% Armenian against a Greek background means resolving a small shift in the ratio of two ingredients both groups already contain. These methods cannot see a shift that fine.</p>
+    <p>The honest statement is therefore split in two: the Armenian line is <strong>established</strong>, by the mitochondrial evidence and the documented pedigree together, and its <strong>size</strong> is simply not measurable from these data. That is a division of labour between two kinds of evidence, not a hole in the result.</p>
+  </div>
+
+  <div class="limit">
+    <h3>One limit the disclosure exposed</h3>
+    <p>Knowing where to look revealed something no amount of analysis would have found on its own: there is <strong>no Cappadocian, Karamanl&#305; or central Anatolian Greek reference sample in any database used in this report</strong>. The mother's actual ancestral population has never been sampled by anyone. So part of every &ldquo;differs from population X&rdquo; statement above reflects a gap in the world's reference collections, not her ancestry being unusual. A related point surfaced alongside it: the two modern Greek reference panels in the data differ measurably from each other, so even &ldquo;Greek&rdquo; is not one fixed yardstick.</p>
+    <p>One question also stays open. Because these shares must add up to 100%, &ldquo;more eastern ancestry&rdquo; and &ldquo;less northern ancestry&rdquo; cannot be told apart by relative measures, and the model that could separate them returns impossible weights. Your <strong>position</strong> among populations is established; whether it comes from the presence of one thing or the absence of another is not.</p>
+  </div>
+
 
   <h2>In short</h2>
   <p>Your ancestry is characteristic of the Aegean since the Bronze Age: mostly descended from the Neolithic farmers who brought agriculture from Anatolia into Greece around 6500 BCE, with a substantial Caucasus/Iranian-related layer, and a minority steppe component that arrived around 2000–1900 BCE, at the dawn of Mycenaean Greece — in proportions statistically indistinguishable from the Mycenaean-era dead themselves, measured inside the same analysis rather than compared across two. Within Greek variation you sit at its eastern Aegean edge. No Slavic ancestry is detectable. The maternal line runs back into the eastern Mediterranean of Classical antiquity, undatable with present data. And the paternal line is a thread of its own: down from the Bronze Age steppe, through the Balkans, into Greece — carrying 32 mutations that, so far as anyone can currently tell, belong to no one else alive or dead.</p>
