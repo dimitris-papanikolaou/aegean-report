@@ -207,7 +207,7 @@ footer{
     <h1>Genomic ancestry of a Greek mother and son</h1>
     <p class="standfirst">Findings, and the analysis supporting each of them. Where a question could not be answered, the reason is given rather than a weakly-supported answer.</p>
     <p class="meta">
-      <span>Report 2026-09-10 &middot; rev. 2</span>
+      <span>Report 2026-09-12 &middot; rev. 3</span>
       <span>2 whole genomes</span>
       <span>1,232,346 genotyped positions</span>
     </p>
@@ -229,6 +229,8 @@ footer{
     <dd>Inside modern Greek variation on <b>53 of 54</b> measures, at its <b>eastern Aegean edge</b> &mdash; more haplotype sharing with Anatolia, the Levant, the Caucasus and Crete; less with the Balkans and northern Europe. 33 of 34 populations deviate in the predicted direction (P = 2&times;10<sup>&minus;9</sup>). <b>Moderate confidence.</b></dd>
     <dt>Timing, this family</dt>
     <dd>Measured in the same analysis as the ancient remains: steppe <b>0.104 &plusmn; 0.034</b> (son) and <b>0.120 &plusmn; 0.035</b> (mother) &mdash; indistinguishable from Late Bronze Age Crete (0.106) and Greece (0.105). <b>High confidence.</b></dd>
+    <dt>Source of the steppe ancestry</dt>
+    <dd><b>Not the Armenian line.</b> Modern Armenians carry ~0.9% steppe, so that great-grandmother supplies ~1&ndash;2% of the family's; the rest is ordinary Aegean ancestry. See &sect;11. <b>High confidence.</b></dd>
     <dt>Male bias of the steppe influx</dt>
     <dd><b>Not determinable.</b> The X-chromosome test is 2.5&times; too coarse to detect even a 100%-male influx. See &sect;7.</dd>
     <dt>Slavic ancestry</dt>
@@ -544,6 +546,81 @@ footer{
   </div>
 
 
+  <h2><span class="num">Section 11</span>Could the steppe ancestry come from the Armenian line?</h2>
+  <p class="lede">No. The family carries 0.10&ndash;0.12 steppe-related ancestry and one great-grandmother was Armenian &mdash; but Armenians are among the <em>least</em> steppe-shifted populations in the region, not the most.</p>
+  <p>Establishing that took two attempts, because the first two measurements disagreed by a factor of twenty-five.</p>
+
+  <h3>Why the first answer could not be trusted</h3>
+  <p>Modern Armenians fitted at <strong>0.009 &plusmn; 0.019</strong> steppe. A Late Bronze Age population from the Armenian plateau fitted at <strong>0.242 &plusmn; 0.015</strong>. Under the first figure the Armenian line supplies ~2% of the family's steppe; under the second, 30&ndash;50%.</p>
+  <p>There was reason to distrust the low figure. Yamnaya is approximately a mixture of Eastern European hunter-gatherers and Caucasus hunter-gatherers, so for a target already rich in Caucasus ancestry the model can explain the data as &ldquo;more Caucasus&rdquo; or as &ldquo;Caucasus plus steppe&rdquo;, and it takes the cheaper option. Every Caucasus-rich population showed that signature:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Population</th><th class="n">AnatoliaN</th><th class="n">CHG</th><th class="n">Steppe</th></tr></thead>
+    <tbody>
+      <tr class="absent"><td class="pop">Turkish</td><td class="n">0.092</td><td class="n"><strong>0.923</strong></td><td class="n">&minus;0.015</td></tr>
+      <tr class="absent"><td class="pop">Iranian</td><td class="n">0.221</td><td class="n"><strong>0.754</strong></td><td class="n">0.025</td></tr>
+      <tr class="absent"><td class="pop">Assyrian</td><td class="n">0.472</td><td class="n">0.560</td><td class="n"><strong>&minus;0.033</strong></td></tr>
+      <tr class="absent"><td class="pop">Armenian (modern)</td><td class="n">0.441</td><td class="n">0.550</td><td class="n">0.009</td></tr>
+    </tbody>
+  </table></div>
+  <p>Turkish at 92.3% Caucasus ancestry with negative steppe is not a credible estimate; it is the model collapsing in its most visible form.</p>
+
+  <h3>The two checks that resolved it</h3>
+  <p><strong>Same markers.</strong> Refitting the ancient Armenian populations on the <em>same</em> dataset as the modern ones removed the dataset as an explanation. The gap survived:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Population</th><th>Period</th><th class="n">CHG</th><th class="n">Steppe</th><th>fit</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop">Armenia_Lchashen_LBA</td><td class="era">LBA</td><td class="n">0.424</td><td class="n"><strong>0.239</strong></td><td>rejected</td></tr>
+      <tr class="present"><td class="pop">Armenia_BagheriTchala_EIA</td><td class="era">EIA</td><td class="n">0.443</td><td class="n"><strong>0.224</strong></td><td>rejected</td></tr>
+      <tr class="present"><td class="pop"><strong>Armenia_C</strong></td><td class="era">Chalcolithic</td><td class="n">0.320</td><td class="n"><strong>0.220</strong></td><td><strong>FITS, p = 0.18</strong></td></tr>
+      <tr class="present"><td class="pop">Armenia_Karashamb_LBA_EIA</td><td class="era">LBA/EIA</td><td class="n">0.443</td><td class="n"><strong>0.217</strong></td><td>rejected</td></tr>
+      <tr class="present"><td class="pop">Armenia_Brardzryal_IA_Urartian</td><td class="era">Iron Age</td><td class="n">0.436</td><td class="n"><strong>0.209</strong></td><td>rejected</td></tr>
+      <tr class="absent"><td class="pop"><strong>Armenian (modern)</strong></td><td class="era">&mdash;</td><td class="n">0.550</td><td class="n"><strong>0.009</strong></td><td>rejected</td></tr>
+    </tbody>
+  </table></div>
+  <p><code>Armenia_C</code> at 0.220 is the only formally fitting model in the table.</p>
+  <p><strong>No model at all.</strong> Because the disputed quantity was a fitted weight, the question was put again using a statistic that fits nothing &mdash; a direct measure of whether a population shares more ancestry with Yamnaya than Anatolian Neolithic farmers do. It has no sources and no weights, so it cannot suffer the collapse above. It reproduced the same ordering:</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Population</th><th class="n">f4</th><th class="n">Z</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop">Armenia_BagheriTchala_EIA</td><td class="n">&minus;0.001956</td><td class="n">&minus;12.4</td></tr>
+      <tr class="present"><td class="pop">Armenia_Karashamb_LBA_EIA</td><td class="n">&minus;0.001869</td><td class="n">&minus;13.8</td></tr>
+      <tr class="present"><td class="pop">Armenia_Lchashen_LBA</td><td class="n">&minus;0.001666</td><td class="n">&minus;11.6</td></tr>
+      <tr><td class="pop"><strong>Son</strong></td><td class="n">&minus;0.001523</td><td class="n">&minus;4.5</td></tr>
+      <tr><td class="pop">Greek</td><td class="n">&minus;0.001469</td><td class="n">&minus;12.6</td></tr>
+      <tr><td class="pop"><strong>Mother</strong></td><td class="n">&minus;0.001088</td><td class="n">&minus;3.2</td></tr>
+      <tr><td class="pop">Greek_Crete</td><td class="n">&minus;0.000935</td><td class="n">&minus;4.0</td></tr>
+      <tr class="absent"><td class="pop"><strong>Armenian (modern)</strong></td><td class="n"><strong>&minus;0.000333</strong></td><td class="n"><strong>&minus;2.5</strong></td></tr>
+      <tr class="absent"><td class="pop">Turkish</td><td class="n">&minus;0.000225</td><td class="n">&minus;2.0</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">More negative means more steppe affinity. The sign is easy to invert, and an earlier draft of the analysis script did invert it; the calibration that catches the error is that Greeks, at ~26% steppe, must come out strongly negative &mdash; and they do, at &minus;0.001469.</p>
+  <p>Modern Armenians sit near the bottom, beside Turks. The ancient Armenian-plateau groups sit at the top, above modern Greeks. <strong>Two independent methods agree, so the gap is real and not the model collapsing.</strong></p>
+
+  <h3>The answer</h3>
+  <p>The great-grandmother was a <em>modern</em> Armenian, so the modern figure applies. The Bronze Age value describes a population that lived on the same plateau three thousand years earlier and was subsequently diluted.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">Steppe</th><th class="n">From the Armenian line</th><th class="n">The rest must carry</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop"><strong>Mother</strong> (25% Armenian)</td><td class="n">0.120</td><td class="n">0.003 &mdash; <strong>1.9%</strong></td><td class="n"><strong>0.157</strong></td></tr>
+      <tr class="present"><td class="pop"><strong>Son</strong> (12.5% Armenian)</td><td class="n">0.104</td><td class="n">0.001 &mdash; <strong>1.1%</strong></td><td class="n"><strong>0.117</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p>At the generous end of the uncertainty the Armenian share reaches perhaps 10%. It is not the main source.</p>
+  <p><strong>The second half of the hypothesis is ruled out by arithmetic alone</strong>, whichever figure is used. For the Armenian quarter to supply <em>all</em> the mother's steppe ancestry, Armenians would need to be <strong>48%</strong> steppe; for the son, <strong>83%</strong>. No estimate from any period approaches either.</p>
+  <p>The figures the remaining ancestry must carry &mdash; 0.157 and 0.117 &mdash; sit squarely in the Aegean range measured in &sect;5 (Late Bronze Age Crete 0.106, Greece 0.105, Peloponnese 0.170). Andros, Lesbos, Kasos and Rhodes are all Aegean, and &sect;5 found every Aegean population after &asymp;2000 BCE carries steppe ancestry, none indistinguishable from zero. A steppe-free Aegean ancestry would have to be the sole exception to that entire record.</p>
+  <p><strong>The family's steppe ancestry is ordinary Aegean ancestry</strong>, inherited through the island lines and essentially unchanged since the Bronze Age &mdash; which is what &sect;5 concluded before anyone knew where the family came from.</p>
+
+  <div class="limit">
+    <h3>An incidental finding, not about this family</h3>
+    <p><strong>Modern Armenians carry substantially less steppe-related ancestry than Bronze and Iron Age populations of the Armenian plateau did</strong> &mdash; 0.009 against 0.209&ndash;0.239, confirmed by two independent methods on identical markers. The pattern is consistent with dilution by Anatolian-farmer-rich populations over the last two to three thousand years. It was not what this analysis set out to find, and is recorded as an observation rather than a claim about Armenian population history, which would require a study designed for the purpose.</p>
+  </div>
+
+  <div class="limit">
+    <h3>What this settles, and what it does not</h3>
+    <p>This measures the steppe content of the <strong>source populations</strong> and establishes what was arithmetically available from each. It does <strong>not</strong> trace the family's own steppe ancestry, segment by segment, back to particular ancestral lines. That decomposition failed five times (&sect;10) and nothing here changes it. The question happened to be answerable without it, because it turned on the sources rather than on the family.</p>
+  </div>
+
+
   <p class="figures">All analyses run on Northwestern University's Quest cluster. Version and parameter records retained.</p>
 </article>
 
@@ -667,6 +744,23 @@ footer{
     <h3>One limit the disclosure exposed</h3>
     <p>Knowing where to look revealed something no amount of analysis would have found on its own: there is <strong>no Cappadocian, Karamanl&#305; or central Anatolian Greek reference sample in any database used in this report</strong>. The mother's actual ancestral population has never been sampled by anyone. So part of every &ldquo;differs from population X&rdquo; statement above reflects a gap in the world's reference collections, not her ancestry being unusual. A related point surfaced alongside it: the two modern Greek reference panels in the data differ measurably from each other, so even &ldquo;Greek&rdquo; is not one fixed yardstick.</p>
     <p>One question also stays open. Because these shares must add up to 100%, &ldquo;more eastern ancestry&rdquo; and &ldquo;less northern ancestry&rdquo; cannot be told apart by relative measures, and the model that could separate them returns impossible weights. Your <strong>position</strong> among populations is established; whether it comes from the presence of one thing or the absence of another is not.</p>
+  </div>
+
+
+  <h2>The son's question: could all the steppe ancestry be Armenian?</h2>
+  <p>Having read the above, the son asked a sharp question. His steppe ancestry is about 10&ndash;12%, and one of his great-grandmothers was Armenian. Could that single line be supplying all of it, leaving the rest of his ancestry steppe-free? It is exactly the right shape of question, and it deserved a careful answer.</p>
+  <p><strong>The answer is no, and the reason is that the question's starting assumption turns out to be the wrong way round.</strong> It assumes Armenians are heavily steppe-derived. They are in fact among the <em>least</em> steppe-shifted populations in the whole region: the Armenian plateau took in comparatively little from the steppe migrations that reshaped Europe. Had the great-grandmother been Russian or Ukrainian, this would have been a good question, because those populations genuinely are steppe-rich. An Armenian one points the other way.</p>
+  <p><strong>Getting there took two goes, and the wobble is part of the story.</strong> The first two measurements disagreed by a factor of twenty-five. Modern Armenians came out at about 0.9% steppe; a Bronze Age population from the Armenian plateau came out at 24%. The difference mattered: under the first figure the Armenian line supplies about 2% of his steppe ancestry, under the second, 30 to 50%.</p>
+  <p><strong>And there was a specific reason to distrust the low number.</strong> The steppe source population used in these models &mdash; the Yamnaya herders &mdash; is itself roughly a blend of two older groups, one of which is the Caucasus population. So for anyone already carrying a great deal of Caucasus ancestry, the method has two ways of explaining the same DNA: &ldquo;more Caucasus&rdquo;, or &ldquo;Caucasus plus some steppe&rdquo;. It takes the simpler option, which can wrongly push the steppe estimate down to zero. The giveaway was Turkish samples, which came out as 92% Caucasus with a <em>negative</em> share of steppe &mdash; an impossibility, and a visible sign of the method breaking down rather than a result.</p>
+  <p><strong>Two checks settled it.</strong> The first re-measured the ancient Armenian populations on exactly the same genetic markers as the modern ones, so no difference between datasets could be hiding in the gap. The gap survived: five ancient plateau groups came in at 21&ndash;24%, against 0.9% for modern Armenians. The second check is the more convincing. Because the disputed figure was one a model had fitted, the question was asked again using a method that fits no model at all &mdash; just a direct comparison of who shares more ancestry with whom. It has no sources and no fitted shares, so it cannot suffer the breakdown described above. It gave the same ordering: modern Armenians near the bottom of the steppe range, beside Turks; the ancient Armenian-plateau groups at the top, above modern Greeks. Two methods with quite different weaknesses agreeing is what makes this trustworthy.</p>
+  <p><strong>So to the answer.</strong> The great-grandmother was a <em>modern</em> Armenian, which makes the modern figure the applicable one; the Bronze Age number describes people who lived in the same place three thousand years earlier and whose descendants were later diluted. On that basis the Armenian line supplies roughly <strong>2% of the mother's steppe ancestry and 1% of the son's</strong>. Read the uncertainty as generously as it stretches and it reaches perhaps 10%. It is not the main source.</p>
+  <p><strong>The other half of the idea &mdash; that the rest is steppe-free &mdash; fails on arithmetic alone.</strong> For that Armenian quarter to supply <em>all</em> of the mother's steppe ancestry, Armenians would have to be 48% steppe; for the son, 83%. No estimate of Armenian steppe ancestry from any period comes near either figure. Meanwhile the amount the remaining ancestry must carry works out at about 16% for her and 12% for him &mdash; which is simply the ordinary Aegean amount (Late Bronze Age Crete 10.6%, Greece generally 10.5%, the Peloponnese 17%). Andros, Lesbos, Kasos and Rhodes are all Aegean, and every Aegean population after about 2000 BCE carries steppe ancestry, with none indistinguishable from zero. A steppe-free Aegean ancestry would have to be the single exception to that entire record.</p>
+  <p><strong>Your steppe ancestry is ordinary Aegean ancestry</strong>, inherited through the island lines and essentially unchanged since the Bronze Age &mdash; the same conclusion this report reached before anyone knew where the family came from.</p>
+  <p class="note">One caution on what this does and does not show. It measures how much steppe ancestry each source population carried, and so what was arithmetically available from each line. It does not trace your own steppe ancestry, stretch by stretch, back to particular ancestors; that decomposition failed five times, as described above, and nothing here changes it. This question simply happened to be answerable without it.</p>
+
+  <div class="limit">
+    <h3>One thing turned up along the way that has nothing to do with your family</h3>
+    <p>Modern Armenians carry far less steppe ancestry than the Bronze and Iron Age people of the Armenian plateau did &mdash; about 0.9% against 21&ndash;24%, on identical markers and confirmed two separate ways. That is consistent with real dilution of the plateau's population over the last two to three thousand years. It is recorded as an observation stumbled upon, not as a claim about Armenian history, which would need a study built for the purpose.</p>
   </div>
 
 
