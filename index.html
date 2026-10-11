@@ -207,8 +207,8 @@ footer{
     <h1>Genomic ancestry of a Greek mother and son</h1>
     <p class="standfirst">Findings, and the analysis supporting each of them. Where a question could not be answered, the reason is given rather than a weakly-supported answer.</p>
     <p class="meta">
-      <span>Report 2026-09-12 &middot; rev. 3</span>
-      <span>2 whole genomes</span>
+      <span>Report 2026-10-11 &middot; rev. 4</span>
+      <span>3 whole genomes</span>
       <span>1,232,346 genotyped positions</span>
     </p>
   </div>
@@ -231,7 +231,12 @@ footer{
     <dd>Measured in the same analysis as the ancient remains: steppe <b>0.104 &plusmn; 0.034</b> (son) and <b>0.120 &plusmn; 0.035</b> (mother) &mdash; indistinguishable from Late Bronze Age Crete (0.106) and Greece (0.105). <b>High confidence.</b></dd>
     <dt>Source of the steppe ancestry</dt>
     <dd><b>Not the Armenian line.</b> Modern Armenians carry ~0.9% steppe, so that great-grandmother supplies ~1&ndash;2% of the family's; the rest is ordinary Aegean ancestry. See &sect;11. <b>High confidence.</b></dd>
-    <dt>Male bias of the steppe influx</dt>
+    <dt>Paternal line, observed directly</dt>
+    <dd>The father's sister sequenced at 30&times;, confirmed a <b>full</b> paternal aunt (kinship 0.127). Paternal steppe <b>0.102 &plusmn; 0.033</b> &mdash; ordinary Aegean. See &sect;12. <b>High confidence.</b></dd>
+    <dt>Cretan affinity</dt>
+    <dd><b>Paternal in origin.</b> The aunt reproduces it alone: indistinguishable from Cretan Greeks (p = 0.41), distinct from mainland Greeks (p = 0.005). <b>High confidence.</b></dd>
+    <dt>Paternal grandmother's line</dt>
+    <dd>mtDNA <b>H5</b>, distinct from the K1a19 of mother and son, carrying <b>four private mutations</b> where K1a19 has none. <b>High confidence.</b></dd>    <dt>Male bias of the steppe influx</dt>
     <dd><b>Not determinable.</b> The X-chromosome test is 2.5&times; too coarse to detect even a 100%-male influx. See &sect;7.</dd>
     <dt>Slavic ancestry</dt>
     <dd><b>Not distinguishable from zero</b>; bounded above at roughly 20%. <b>Moderate confidence.</b></dd>
@@ -621,6 +626,77 @@ footer{
   </div>
 
 
+  <h2><span class="num">Section 12</span>The paternal line, observed directly</h2>
+  <p class="lede">Every section above describes the father's side only indirectly. The father's sister resolves that, because she is not a reconstruction &mdash; she is a second draw from the same two paternal grandparents, carrying no maternal-side ancestry at all.</p>
+  <p>&sect;7 explains why a reconstruction was never going to work. The original aim was to characterise the deceased father by subtracting the mother from the son, and that failed twice: first because a sequencing-platform artefact exceeded the biological signal, then because the subtraction's own variance swamped it. The second failure was the permanent one. A son is a single draw from his mother's genome, and no amount of sequencing depth changes which half he received.</p>
+  <p>Her genome was sequenced at 30&times; and analysed on the same reference build and the same marker sets as the rest of this report.</p>
+
+  <h3>She is who the genealogy says</h3>
+  <p>Relatedness was tested before anything else, on 572,666 markers.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Pair</th><th class="n">Kinship</th><th class="n">Expected</th><th class="n">IBS0</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="pop">Mother &ndash; son</td><td class="n"><strong>0.2475</strong></td><td class="n">0.2500</td><td class="n">0.00046</td><td>parent&ndash;offspring &mdash; <strong>control</strong></td></tr>
+      <tr class="present"><td class="pop"><strong>Aunt &ndash; son</strong></td><td class="n"><strong>0.1271</strong></td><td class="n">0.1250</td><td class="n">0.04839</td><td><strong>full aunt</strong></td></tr>
+      <tr><td class="pop">Aunt &ndash; mother</td><td class="n"><strong>&minus;0.0166</strong></td><td class="n">0.0000</td><td class="n">0.10618</td><td>unrelated</td></tr>
+    </tbody>
+  </table></div>
+  <p>The mother&ndash;son pair is the control: their relationship is certain, so a method that did not return 0.25 there would not be trusted anywhere else. It did.</p>
+  <p>Two things follow. She is a <strong>full</strong> aunt, not a half-aunt &mdash; the distinction matters, because a half-aunt would descend from only one of the two paternal grandparents and would speak for only one of the two paternal lines. And the father's and mother's families are <strong>not</strong> related to one another, which was a live possibility worth excluding: Kasos has a few hundred inhabitants and Aegean island populations are endogamous.</p>
+
+  <h3>A second maternal lineage, and this one has a clock</h3>
+  <p>She carries her own mother's mitochondrial lineage &mdash; the paternal grandmother's, a line this project had no access to before. It is <strong>haplogroup H5</strong>, defined by 263G, 456T, 750G, 1438G, 4769G, 8860G, 15326G and 16304C, and entirely distinct from the K1a19 carried by the mother and son, as two unrelated maternal lines should be.</p>
+  <p>The more interesting detail sits below that. She carries <strong>four mutations that belong to no named branch</strong> &mdash; 6962A, 8631G, 13204A and 14040A &mdash; and they survive classification against both PhyloTree 17.2 and the finer Forensic Update tree, so they are genuinely private rather than an unnamed subclade. All four are clean homoplasmic calls at ~245&times; coverage.</p>
+  <p>&sect;3 reported that the K1a19 line could not be dated at all, because it carries <strong>zero</strong> private mutations and a process with no events constrains nothing. This line carries four. That is a real asymmetry between the two maternal lineages in this family.</p>
+  <p class="note">Converting it into an age estimate is deliberately not attempted. Four private coding-region mutations against a published mitogenome substitution rate would imply a branch age that may exceed the accepted age of H5 itself, and that tension needs resolving before any number is quoted.</p>
+
+  <h3>The paternal line carries the ordinary Aegean steppe ancestry</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">Steppe</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop"><strong>Paternal aunt</strong></td><td class="n"><strong>0.102 &plusmn; 0.033</strong></td></tr>
+      <tr class="present"><td class="pop">Son</td><td class="n">0.104 &plusmn; 0.034</td></tr>
+      <tr class="present"><td class="pop">Mother</td><td class="n">0.120 &plusmn; 0.035</td></tr>
+      <tr><td class="pop">Crete, Late Bronze Age</td><td class="n">0.106</td></tr>
+      <tr><td class="pop">Greece, Late Bronze Age</td><td class="n">0.105</td></tr>
+      <tr class="absent"><td class="pop">Crete, EMBA &mdash; pre-steppe control</td><td class="n">0.016</td></tr>
+    </tbody>
+  </table></div>
+  <p>The paternal side sits at 0.102 &mdash; indistinguishable from Late Bronze Age Crete and Greece, and far above the pre-steppe control. &sect;11 argued on arithmetic that this family's steppe ancestry could not have come from the Armenian line; this is the positive half of that case, measured rather than inferred.</p>
+
+  <h3>The affinity with Cretan Greeks is paternal</h3>
+  <p>&sect;6 reported that of every modern population tested, the only one this family cannot be distinguished from is Cretan Greeks, and &sect;10 connected that to Kasos, roughly 50 km from Crete. That was an inference from the genealogy. It can now be tested, because the aunt carries the Dodecanese ancestry and none of the maternal ancestry.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Sample</th><th class="n">vs Cretan Greeks</th><th class="n">vs mainland Greeks</th></tr></thead>
+    <tbody>
+      <tr class="present"><td class="pop"><strong>Paternal aunt</strong></td><td class="n">0.407 &mdash; indistinguishable</td><td class="n">0.0051 &mdash; differ</td></tr>
+      <tr class="present"><td class="pop">Son</td><td class="n">0.754 &mdash; indistinguishable</td><td class="n">0.00011 &mdash; differ</td></tr>
+      <tr class="present"><td class="pop">Mother</td><td class="n">0.504 &mdash; indistinguishable</td><td class="n">9.4&times;10<sup>&minus;6</sup> &mdash; differ</td></tr>
+    </tbody>
+  </table></div>
+  <p>She reproduces the pattern on her own. All three are indistinguishable from Cretan Greeks and distinct from mainland Greeks, and all three were measured by the identical method, for reasons the next section explains. <strong>The &sect;6 finding is better supported now than when it was first published.</strong></p>
+  <p>For context, she is clearly not Anatolian or Levantine: she differs from Turkish samples at 2.5&times;10<sup>&minus;18</sup>, Armenian at 2.6&times;10<sup>&minus;10</sup> and Cypriot at 0.029. She is indistinguishable from southern Italians (0.59), which is unremarkable given the Greek settlement of southern Italy.</p>
+
+  <h3>A sequencing artefact, demonstrated inside one person</h3>
+  <p>&sect;7 describes a platform artefact that defeated the attempt to isolate the father's contribution: the son's genome was read on MGI/Complete Genomics DNBSEQ and the mother's on Illumina, and the difference between the machines exceeded the biological signal. Every demonstration of it so far has been a comparison against external reference data, where one can always argue the reference panel is at fault.</p>
+  <p>A third genome allowed a cleaner demonstration. Each person's genome can be reduced to comparable form two ways: by sampling one sequencing read at each position, or by using the genotype the caller derived from all reads at that position. Same person, same reads, two readings. They should agree.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Comparison</th><th class="n">p</th><th></th></tr></thead>
+    <tbody>
+      <tr class="absent"><td class="pop"><strong>Son</strong>, read-sampled vs genotype-derived</td><td class="n"><strong>0.00013</strong></td><td><strong>differ</strong></td></tr>
+      <tr class="present"><td class="pop">Mother, read-sampled vs genotype-derived</td><td class="n">0.4689</td><td>indistinguishable</td></tr>
+    </tbody>
+  </table></div>
+  <p>They do not agree for the son, and they do agree for the mother. The son is DNBSEQ; the mother is Illumina. <strong>The artefact is therefore internal to the data, not an artefact of comparing against reference panels</strong> &mdash; it separates a person from himself.</p>
+  <p>This has a practical consequence that governs the section above: comparisons between the aunt and the mother or son are only meaningful when both sides are prepared the same way. The mother and son were accordingly re-derived by the aunt's exact procedure before any comparison in this section was made.</p>
+
+  <div class="limit">
+    <h3>What this does not establish</h3>
+    <p><strong>It does not resolve where the family's elevated Caucasus/Iranian-related ancestry comes from.</strong> An earlier reading of these data suggested the aunt was distinguishable from the mother and son, which would have pointed to a maternal origin. That separation <strong>does not survive</strong> holding the preparation method constant: compared like with like, she is indistinguishable from both (p = 0.14 and 0.09). The question is open, and less well supported than it briefly appeared.</p>
+    <p><strong>And she says nothing about the paternal Y-chromosome line.</strong> She has no Y chromosome. The haplogroup, the 32 private variants and the question of where that lineage sits all remain exactly as &sect;2 left them. Only a male relative on the direct paternal line &mdash; the father's brother, or a male cousin through him &mdash; could speak to it.</p>
+  </div>
+
+
   <p class="figures">All analyses run on Northwestern University's Quest cluster. Version and parameter records retained.</p>
 </article>
 
@@ -764,12 +840,35 @@ footer{
   </div>
 
 
+  <h2>The paternal side, seen at last: your father's sister</h2>
+  <p>Until now, everything about your father's side has been reached indirectly &mdash; argued, inferred, triangulated. There was never a sample that stood for the paternal line on its own. Now there is. Your father's sister &mdash; your paternal aunt, a living person who gave her consent &mdash; has had her whole genome read, and it changes what can be said about the half of your ancestry that comes down from your father.</p>
+
+  <p><strong>Why she matters so much.</strong> The original hope was to recover something of your late father by comparing you with your mother and subtracting her out: whatever you carry that she does not must have come from him. That failed twice. The first failure was the machine problem described earlier. The second was deeper and permanent. You are a single draw from your mother's DNA &mdash; at each spot in the genome she had two versions and passed on one, and which one is fixed forever. Better sequencing cannot recover the half of her she did not give you, so there is no clean way to isolate what came from your father instead. Your aunt sidesteps all of this because she is not a reconstruction at all. She is a second child of the very same two grandparents, and she carries none of your mother's side. She <em>is</em> the paternal line, read directly.</p>
+
+  <p><strong>First, checking she is who the family says.</strong> Before anything else, the analysis measured how closely related each pair of people is &mdash; a single number that rises with shared DNA. Your mother and you came out at 0.2475, against the 0.25 expected for a parent and child. That pair is the control: their relationship is beyond doubt, so a method that got <em>them</em> wrong could not be trusted on anyone else. It got them right. Your aunt and you came out at 0.1271, almost exactly the 0.125 expected for a full aunt and nephew. &ldquo;Full&rdquo; matters: a half-aunt would land near 0.0625 and would descend from only one of your two paternal grandparents, speaking for only half the paternal story. She is a full aunt, carrying both. And your aunt and your mother came out at essentially zero &mdash; unrelated. That was worth checking, because Kasos has only a few hundred people and island families often intermarry; they do not, here.</p>
+
+  <p><strong>A second maternal line &mdash; and this one may carry a clock.</strong> Your aunt also carries her own mother's mitochondrial loop &mdash; your paternal grandmother's line, which no one in this project had ever seen. It is a completely different group, H5, with none of the K1a19 that you and your mother share, exactly as two unrelated maternal lines should be. The striking part is what lies within it. She carries four mutations that belong to no named branch of the human family tree &mdash; genuinely her own, confirmed against two separate versions of the reference tree and read cleanly at high depth. Recall that your own maternal line could not be dated at all, because it had none of these private mutations: with no changes to count, there is no clock. Hers has four.</p>
+  <p class="note">We are deliberately <em>not</em> turning that into a date yet, and the reason is honest: four such mutations would imply an age that may be older than haplogroup H5 itself, and that contradiction has to be sorted out before any number is worth quoting.</p>
+
+  <p><strong>The paternal line carries ordinary Aegean steppe ancestry.</strong> Your aunt's steppe proportion comes out at 0.102 &mdash; sitting right beside Late Bronze Age Crete (0.106) and Late Bronze Age Greece (0.105), and far above a pre-steppe Cretan control (0.016). So the Dodecanese side of your family carries the normal Aegean amount of steppe ancestry, no more and no less. The earlier section could only <em>argue</em> this by arithmetic; now it is measured on the paternal line itself.</p>
+
+  <p><strong>The Cretan connection is paternal &mdash; now proven rather than guessed.</strong> The report had said that the only modern population your family cannot be told apart from is Cretan Greeks, and tied that to Kasos lying about 50 km off Crete. That was an inference. Your aunt, carrying the Kasos/Rhodes ancestry and none of your mother's, reproduces it entirely on her own: indistinguishable from Cretan Greeks, and clearly distinct from mainland Greeks. All three of you show the identical pattern, so it is a feature of the paternal line, not a coincidence of mixing.</p>
+
+  <p><strong>A sequencing problem caught inside a single person.</strong> Throughout, the report has described a flaw: your genome was read on one brand of machine and your mother's on another, and the gap between the machines was larger than the biological signal. Every earlier demonstration compared against outside reference data, where a sceptic could always blame the reference. A third genome allowed a cleaner test. Take one person's data and reduce it two different ways &mdash; either pick a single sequencing read at each position, or use the considered genotype the software works out from all the reads there. Same person, same data, two readings; they ought to agree. For you they did <em>not</em>. For your mother they did. Your machine is the one with the known problem. So the flaw lives inside the data itself: it can separate a person from himself. The practical upshot is that before your aunt could be compared with you or your mother, the two of you had to be re-processed by exactly her method, so that like was compared with like.</p>
+
+  <div class="limit">
+    <h3>What this does not settle &mdash; plainly</h3>
+    <p>Two things. First, an earlier reading during this work suggested your aunt was measurably different from you and your mother, which would have pointed to the elevated Caucasus/Iranian ancestry coming from your mother's side. That difference <em>vanished</em> once everyone was processed identically. So that question is open, and it is less well supported than it briefly looked &mdash; the apparent signal was the machine, not the biology.</p>
+    <p>Second, your aunt has no Y chromosome, so the paternal surname line &mdash; the haplogroup and its 32 private variants &mdash; is completely untouched by her sample. Only a male relative on the direct father-to-son line could ever speak to that.</p>
+  </div>
+
+
   <h2>In short</h2>
   <p>Your ancestry is characteristic of the Aegean since the Bronze Age: mostly descended from the Neolithic farmers who brought agriculture from Anatolia into Greece around 6500 BCE, with a substantial Caucasus/Iranian-related layer, and a minority steppe component that arrived around 2000–1900 BCE, at the dawn of Mycenaean Greece — in proportions statistically indistinguishable from the Mycenaean-era dead themselves, measured inside the same analysis rather than compared across two. Within Greek variation you sit at its eastern Aegean edge. No Slavic ancestry is detectable. The maternal line runs back into the eastern Mediterranean of Classical antiquity, undatable with present data. And the paternal line is a thread of its own: down from the Bronze Age steppe, through the Balkans, into Greece — carrying 32 mutations that, so far as anyone can currently tell, belong to no one else alive or dead.</p>
 </article>
 
 <footer>
-  Contains identifiable genetic information for two living people. Please treat accordingly and do not redistribute.
+  Contains identifiable genetic information for three living people. Please treat accordingly and do not redistribute.
 </footer>
 
 </main>
